@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <filter id="gg2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Left column - features -->
+  <g transform="translate(30,40)">
+    <!-- Feature 1 -->
+    <rect x="0" y="0" width="160" height="50" rx="8" fill="var(--card)" stroke="#00d4ff" stroke-width="1" filter="url(#gg2)"/>
+    <text x="12" y="20" font-size="10" fill="#00d4ff" font-family="monospace" font-weight="600">9 580+</text>
+    <text x="12" y="36" font-size="10" fill="#9494b0" font-family="monospace">n8n templates</text>
+
+    <!-- Feature 2 -->
+    <rect x="0" y="65" width="160" height="50" rx="8" fill="var(--card)" stroke="#5c5c80" stroke-width="1"/>
+    <text x="12" y="85" font-size="10" fill="#0066ff" font-family="monospace" font-weight="600">246+</text>
+    <text x="12" y="101" font-size="10" fill="#9494b0" font-family="monospace">Daily prompts</text>
+
+    <!-- Feature 3 -->
+    <rect x="0" y="130" width="160" height="50" rx="8" fill="var(--card)" stroke="#5c5c80" stroke-width="1"/>
+    <text x="12" y="150" font-size="10" fill="#00d4ff" font-family="monospace" font-weight="600">100%</text>
+    <text x="12" y="166" font-size="10" fill="#9494b0" font-family="monospace">Telegram Stars</text>
+  </g>
+
+  <!-- Center divider -->
+  <line x1="210" y1="40" x2="210" y2="220" stroke="var(--border)" stroke-width="1" stroke-dasharray="4,4" opacity=".5"/>
+
+  <!-- Right column - pricing cards stacked -->
+  <g transform="translate(230,40)">
+    <!-- n8n card -->
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="12" y="20" font-size="12" fill="#ececf4" font-family="monospace" font-weight="bold">N8N</text>
+    <text x="12" y="38" font-size="20" fill="#00d4ff" font-family="monospace" font-weight="bold">100⭐</text>
+    <text x="70" y="38" font-size="10" fill="#5c5c80" font-family="monospace">/mo</text>
+
+    <!-- Prompts card -->
+    <rect x="0" y="65" width="140" height="55" rx="8" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="12" y="85" font-size="12" fill="#ececf4" font-family="monospace" font-weight="bold">PROMPTS</text>
+    <text x="12" y="103" font-size="20" fill="#0066ff" font-family="monospace" font-weight="bold">50⭐</text>
+    <text x="70" y="103" font-size="10" fill="#5c5c80" font-family="monospace">/mo</text>
+
+    <!-- Combo card -->
+    <rect x="0" y="130" width="140" height="55" rx="8" fill="var(--card)" stroke="#00d4ff" stroke-width="1.5"/>
+    <text x="12" y="150" font-size="12" fill="#ececf4" font-family="monospace" font-weight="bold">COMBO</text>
+    <text x="12" y="168" font-size="20" fill="url(#gc)" font-family="monospace" font-weight="bold">150⭐</text>
+    <text x="70" y="168" font-size="10" fill="#5c5c80" font-family="monospace">/mo</text>
+  </g>
+
+  <!-- Bottom stats bar -->
+  <g transform="translate(30,230)">
+    <rect x="0" y="0" width="340" height="40" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+    <text x="170" y="25" text-anchor="middle" font-size="11" fill="#9494b0" font-family="monospace">⭐ Оплата звёздами Telegram · Мгновенный доступ</text>
+  </g>
+</svg>

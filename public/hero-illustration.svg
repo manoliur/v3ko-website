@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#0066ff" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#0066ff" stop-opacity=".04"/>
+    </linearGradient>
+    <radialGradient id="gl" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="400" cy="300" r="250" fill="url(#gl)" opacity=".6"/>
+
+  <!-- Abstract circuit/network nodes -->
+  <g stroke="url(#g2)" stroke-width="1.5" opacity=".3">
+    <line x1="200" y1="180" x2="300" y2="250"/>
+    <line x1="300" y1="250" x2="200" y2="380"/>
+    <line x1="300" y1="250" x2="450" y2="200"/>
+    <line x1="450" y1="200" x2="550" y2="280"/>
+    <line x1="550" y1="280" x2="450" y2="400"/>
+    <line x1="300" y1="250" x2="400" y2="350"/>
+    <line x1="400" y1="350" x2="550" y2="280"/>
+    <line x1="200" y1="380" x2="400" y2="350"/>
+    <line x1="550" y1="280" x2="650" y2="230"/>
+    <line x1="450" y1="400" x2="600" y2="380"/>
+    <line x1="350" y1="120" x2="200" y2="180"/>
+    <line x1="350" y1="120" x2="450" y2="200"/>
+  </g>
+
+  <!-- Hub nodes -->
+  <g fill="var(--cyan)" opacity=".8">
+    <circle cx="200" cy="180" r="6" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="300" cy="250" r="8" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="200" cy="380" r="5" fill="#00d4ff" opacity=".6"/>
+    <circle cx="450" cy="200" r="6" fill="#0066ff" filter="url(#glow)"/>
+    <circle cx="550" cy="280" r="8" fill="#00d4ff" filter="url(#glow)"/>
+    <circle cx="450" cy="400" r="6" fill="#0066ff" opacity=".6"/>
+    <circle cx="400" cy="350" r="5" fill="#00d4ff" opacity=".5"/>
+    <circle cx="650" cy="230" r="4" fill="#0066ff"/>
+    <circle cx="600" cy="380" r="4" fill="#0066ff"/>
+    <circle cx="350" cy="120" r="4" fill="#00d4ff" opacity=".5"/>
+  </g>
+
+  <!-- Central brain/neural icon -->
+  <g transform="translate(400,280)">
+    <path d="M-50,-30C-50,-50 -30,-60 -10,-55C0,-45 10,-45 15,-55C35,-60 55,-50 55,-30C55,-15 45,0 50,15C55,30 40,45 25,45C15,40 5,40 -5,45C-20,45 -35,30 -30,15C-25,0 -35,-15 -50,-30Z" fill="url(#g1)" stroke="url(#g2)" stroke-width="1" opacity=".9"/>
+    <path d="M-20,-15 C-10,-25 10,-25 20,-15" stroke="url(#g2)" stroke-width="1.2" fill="none" opacity=".6"/>
+    <path d="M-18,-3 C-8,-13 8,-13 18,-3" stroke="url(#g2)" stroke-width="1" fill="none" opacity=".5"/>
+    <path d="M-15,8 C-5,-2 5,-2 15,8" stroke="url(#g2)" stroke-width=".8" fill="none" opacity=".4"/>
+    <circle cx="0" cy="-10" r="3" fill="#00d4ff" filter="url(#glow)"/>
+  </g>
+
+  <!-- Pulse rings -->
+  <g>
+    <circle cx="300" cy="250" r="20" stroke="#00d4ff" stroke-width=".5" fill="none" opacity=".3">
+      <animate attributeName="r" from="15" to="40" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from=".4" to="0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="280" r="20" stroke="#0066ff" stroke-width=".5" fill="none" opacity=".3">
+      <animate attributeName="r" from="15" to="40" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from=".4" to="0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Small data flow particles -->
+  <g fill="#00d4ff" opacity=".6">
+    <circle cx="250" cy="215" r="2">
+      <animate attributeName="cx" values="200;300" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="180;250" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.8;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="225" r="2">
+      <animate attributeName="cx" values="300;450" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;200" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.8;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Bottom dock icons -->
+  <g transform="translate(0,520)" opacity=".7">
+    <!-- n8n icon -->
+    <rect x="280" y="0" width="48" height="48" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="304" y="30" text-anchor="middle" font-size="18" fill="#00d4ff" font-family="monospace" font-weight="bold">n8n</text>
+
+    <!-- AI icon -->
+    <rect x="345" y="0" width="48" height="48" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="369" y="30" text-anchor="middle" font-size="18" fill="#00d4ff" font-family="monospace" font-weight="bold">AI</text>
+
+    <!-- Telegram icon -->
+    <rect x="410" y="0" width="48" height="48" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="434" y="30" text-anchor="middle" font-size="18" fill="#00d4ff" font-family="monospace" font-weight="bold">TG</text>
+  </g>
+</svg>

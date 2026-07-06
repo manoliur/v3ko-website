@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" fill="none">
+  <defs>
+    <linearGradient id="gw" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <linearGradient id="gb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#0066ff" stop-opacity=".06"/>
+    </linearGradient>
+    <filter id="gw2">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#00d4ff"/>
+    </marker>
+  </defs>
+
+  <!-- Background panel -->
+  <rect x="50" y="40" width="600" height="320" rx="16" fill="url(#gb)" stroke="var(--border)" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect x="50" y="40" width="600" height="40" rx="16" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+  <rect x="50" y="64" width="600" height="16" fill="var(--card)"/>
+  <text x="80" y="65" font-size="12" fill="#5c5c80" font-family="monospace">n8n Workflow — AI Email Assistant</text>
+  <circle cx="610" cy="60" r="4" fill="#ff5f56" opacity=".6"/>
+  <circle cx="624" cy="60" r="4" fill="#ffbd2e" opacity=".6"/>
+  <circle cx="638" cy="60" r="4" fill="#27c93f" opacity=".6"/>
+
+  <!-- Step 1: Email Trigger -->
+  <rect x="100" y="100" width="140" height="60" rx="10" fill="var(--card)" stroke="#00d4ff" stroke-width="1.5" filter="url(#gw2)"/>
+  <text x="120" y="123" font-size="10" fill="#00d4ff" font-family="monospace" font-weight="600">TRIGGER</text>
+  <text x="120" y="142" font-size="12" fill="#ececf4" font-family="monospace">Gmail Inbox</text>
+
+  <!-- Step 2: AI Process -->
+  <rect x="280" y="100" width="140" height="60" rx="10" fill="var(--card)" stroke="#0066ff" stroke-width="1.5"/>
+  <text x="300" y="123" font-size="10" fill="#0066ff" font-family="monospace" font-weight="600">PROCESS</text>
+  <text x="300" y="142" font-size="12" fill="#ececf4" font-family="monospace">ChatGPT Analysis</text>
+
+  <!-- Step 3: Output -->
+  <rect x="460" y="100" width="140" height="60" rx="10" fill="var(--card)" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="480" y="123" font-size="10" fill="#00d4ff" font-family="monospace" font-weight="600">OUTPUT</text>
+  <text x="480" y="142" font-size="12" fill="#ececf4" font-family="monospace">Telegram / Slack</text>
+
+  <!-- Arrows between steps -->
+  <g stroke="url(#gw)" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="240" y1="130" x2="275" y2="130"/>
+    <line x1="420" y1="130" x2="455" y2="130"/>
+  </g>
+
+  <!-- Decision diamond -->
+  <g transform="translate(350,210)">
+    <polygon points="70,0 140,40 70,80 0,40" fill="var(--card)" stroke="#ffd700" stroke-width="1.5"/>
+    <text x="70" y="35" text-anchor="middle" font-size="9" fill="#ffd700" font-family="monospace" font-weight="600">NEEDS</text>
+    <text x="70" y="48" text-anchor="middle" font-size="9" fill="#ffd700" font-family="monospace" font-weight="600">HUMAN?</text>
+  </g>
+
+  <!-- Arrow from step 2 to decision -->
+  <line x1="350" y1="160" x2="350" y2="207" stroke="#0066ff" stroke-width="1.5" marker-end="url(#arrow)" opacity=".6"/>
+
+  <!-- Decision branches -->
+  <g stroke="#5c5c80" stroke-width="1.5" marker-end="url(#arrow)" opacity=".5">
+    <!-- Yes branch -->
+    <line x1="420" y1="250" x2="480" y2="250"/>
+    <!-- No branch (auto-reply) -->
+    <line x1="280" y1="250" x2="220" y2="250"/>
+  </g>
+
+  <!-- Auto-reply (No) -->
+  <rect x="100" y="220" width="120" height="50" rx="8" fill="var(--card)" stroke="#27c93f" stroke-width="1"/>
+  <text x="110" y="240" font-size="9" fill="#27c93f" font-family="monospace" font-weight="600">AUTO-REPLY</text>
+  <text x="110" y="258" font-size="9" fill="#9494b0" font-family="monospace">AI sends reply</text>
+
+  <!-- Human handoff (Yes) -->
+  <rect x="480" y="220" width="120" height="50" rx="8" fill="var(--card)" stroke="#ff5f56" stroke-width="1"/>
+  <text x="490" y="240" font-size="9" fill="#ff5f56" font-family="monospace" font-weight="600">HANDOFF</text>
+  <text x="490" y="258" font-size="9" fill="#9494b0" font-family="monospace">→ Support agent</text>
+
+  <!-- Merge line back -->
+  <path d="M160,270 L160,310 L530,310 L540,270" stroke="#5c5c80" stroke-width="1" fill="none" opacity=".4"/>
+
+  <!-- Final step -->
+  <rect x="280" y="300" width="140" height="50" rx="10" fill="var(--card)" stroke="url(#gw)" stroke-width="1.5"/>
+  <text x="300" y="323" font-size="10" fill="url(#gw)" font-family="monospace" font-weight="600">COMPLETED</text>
+  <text x="300" y="340" font-size="9" fill="#9494b0" font-family="monospace">All cases handled</text>
+
+  <!-- Arrow from both branches to final -->
+  <line x1="160" y1="270" x2="160" y2="310" stroke="#5c5c80" stroke-width="1" opacity=".4"/>
+  <line x1="540" y1="270" x2="540" y2="310" stroke="#5c5c80" stroke-width="1" opacity=".4"/>
+
+  <!-- Animated pulse on trigger -->
+  <circle cx="170" cy="130" r="6" fill="#00d4ff" opacity="0">
+    <animate attributeName="r" values="4;12" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".5;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Glow on final -->
+  <circle cx="350" cy="325" r="10" fill="#00d4ff" opacity="0">
+    <animate attributeName="r" values="8;20" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".3;0" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>

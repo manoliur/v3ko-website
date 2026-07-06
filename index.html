@@ -3,253 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V3Ko — AI-продукты и автоматизации</title>
+  <title>V3Ko — AI-продукты и автоматизации для Telegram</title>
   <meta name="description" content="V3Ko — платформа AI-продуктов. 9 580 готовых n8n шаблонов, ежедневные промпты для нейросетей, голосовой AI-ассистент. Оплата звёздами Telegram.">
+  <meta name="keywords" content="n8n шаблоны, AI автоматизация, промпты, Telegram, нейросети, V3Ko">
   <meta property="og:title" content="V3Ko — AI-продукты и автоматизации">
   <meta property="og:description" content="9 580 n8n шаблонов, ежедневные промпты, голосовой AI-ассистент. Продукты с AI-поддержкой.">
   <meta property="og:image" content="https://v3ko.ru/public/og-image.svg">
+  <meta property="og:url" content="https://v3ko.ru/">
+  <meta property="og:type" content="website">
   <link rel="canonical" href="https://v3ko.ru/">
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-:root{--bg:#1a1a30;--bg2:#1e1e38;--card:#222248;--card-h:#262652;--border:#2a2a5c;--text:#ececf4;--text2:#9494b0;--text3:#5c5c80;--cyan:#00d4ff;--blue:#0066ff;--grad:linear-gradient(135deg,#00d4ff,#0088ff);--glow:rgba(0,212,255,0.1);--r-sm:8px;--r:12px;--r-lg:16px;--r-xl:24px;--t:.4s cubic-bezier(.22,1,.36,1)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-::selection{background:rgba(0,212,255,.25);color:#fff}
-.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
-.gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-a{color:var(--cyan);text-decoration:none;transition:color var(--t)}
-a:hover{color:var(--cyan)}
-
-/* Nav */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.15rem 0;transition:background var(--t),padding var(--t),border-color var(--t)}
-.navbar.scrolled{background:rgba(15,15,28,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(34,34,72,.5);padding:.55rem 0}
-.nv{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:1.5rem;font-weight:900;text-decoration:none;color:var(--text);letter-spacing:-.03em}
-.logo span{color:var(--cyan)}
-.nl{display:flex;align-items:center;gap:.25rem}
-.nl a{padding:.5rem 1rem;color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;border-radius:var(--r-sm);transition:all var(--t)}
-.nl a:hover{color:var(--text);background:rgba(255,255,255,.04)}
-.nav-cta{background:var(--grad)!important;color:#000!important;font-weight:600!important;margin-left:.5rem;padding:.5rem 1.25rem!important}
-.nav-cta:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0, 212, 255,.3)!important}
-.nt{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
-.nt span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all var(--t)}
-.nt.active span:nth-child(1){transform:rotate(45deg)translate(5px,5px)}
-.nt.active span:nth-child(2){opacity:0}
-.nt.active span:nth-child(3){transform:rotate(-45deg)translate(5px,-5px)}
-
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 1.5rem 4rem;position:relative;overflow:hidden}
-.h-bg{position:absolute;inset:0;overflow:hidden}
-.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 70%)}
-.h-orbs{position:absolute;inset:0;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.25;animation:float 10s ease-in-out infinite}
-.orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0, 212, 255,.12),transparent);top:-15%;right:-10%}
-.orb-2{width:350px;height:350px;background:radial-gradient(circle,rgba(0, 102, 255,.08),transparent);bottom:-10%;left:-8%;animation-delay:-5s}
-@keyframes float{0%,100%{transform:translate(0,0)scale(1)}33%{transform:translate(25px,-25px)scale(1.03)}66%{transform:translate(-15px,15px)scale(.97)}}
-.h-c{position:relative;z-index:1;text-align:center;max-width:800px;margin:0 auto}
-.h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1.1rem;background:rgba(0, 212, 255,.06);border:1px solid rgba(0, 212, 255,.12);border-radius:100px;font-size:.78rem;font-weight:600;color:var(--cyan);margin-bottom:2rem;letter-spacing:.02em}
-.h-t{font-size:clamp(2.75rem,6vw,4.5rem);font-weight:900;letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem}
-.h-s{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);margin-bottom:2.5rem;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.7}
-.h-a{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:4rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;border-radius:var(--r-sm);font-size:.95rem;font-weight:600;text-decoration:none;transition:all var(--t);border:none;cursor:pointer}
-.btn-p{background:var(--grad);color:#000;box-shadow:0 1px 0 rgba(255,255,255,.08) inset}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0, 212, 255,.25),0 1px 0 rgba(255,255,255,.08) inset}
-.btn-s{background:rgba(255,255,255,.04);color:var(--text);border:1px solid var(--border)}
-.btn-s:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
-.btn-l{padding:1rem 2.5rem;font-size:1.05rem}
-.h-st{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
-.h-st-n{display:block;font-size:2.5rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em}
-.h-st-l{display:block;font-size:.85rem;color:var(--text3);margin-top:.25rem}
-.h-st-p{position:absolute;top:-2px;right:-18px;font-size:1.5rem;font-weight:700}
-.hero-stat{position:relative;text-align:center}
-
-/* Sections */
-.sec{padding:7rem 0}
-.sh{text-align:center;margin-bottom:4.5rem}
-.sl{display:inline-block;padding:.25rem .8rem;background:rgba(0, 212, 255,.05);border:1px solid rgba(0, 212, 255,.1);border-radius:100px;font-size:.72rem;font-weight:600;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem}
-.st{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem}
-.sd{font-size:1.05rem;color:var(--text2);max-width:580px;margin:0 auto;line-height:1.7}
-
-/* Stats */
-.sb{padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
-.sg{display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.si{text-align:center;flex:1}
-.sn{display:block;font-size:2rem;font-weight:900;letter-spacing:-.02em}
-.sd2{display:block;font-size:.85rem;color:var(--text2);margin-top:.25rem}
-.sdv{width:1px;height:48px;background:var(--border)}
-
-/* N8N Catalog */
-.nav-tabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
-.nav-tabs button{padding:.5rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:100px;color:var(--text2);font-size:.85rem;cursor:pointer;transition:all var(--t);font-weight:500;font-family:inherit}
-.nav-tabs button:hover{border-color:var(--cyan);color:var(--cyan)}
-.nav-tabs button.active{background:var(--grad);color:#000;border-color:transparent;font-weight:600}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;max-height:0;overflow:hidden;transition:max-height .5s ease,opacity .5s ease,transform .5s ease;opacity:0;transform:translateY(10px)}
-.cat-grid.show{max-height:2000px;opacity:1;transform:translateY(0)}
-.cat-chip{padding:.6rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);font-size:.85rem;color:var(--text2);transition:all var(--t);display:flex;justify-content:space-between;align-items:center}
-.cat-chip .count{font-size:.75rem;color:var(--cyan);font-weight:600}
-.cat-chip:hover{border-color:var(--cyan);background:var(--card-h);color:var(--text)}
-
-/* Examples */
-.ex-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1rem}
-.ex-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;transition:all var(--t)}
-.ex-card:hover{border-color:rgba(0, 212, 255,.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
-.ex-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
-.ex-card h4{font-size:.95rem;font-weight:600;margin-bottom:.3rem}
-.ex-card p{font-size:.82rem;color:var(--text2);line-height:1.5}
-.ex-card .use{font-size:.75rem;color:var(--cyan);margin-top:.5rem;border-top:1px solid var(--border);padding-top:.5rem}
-
-/* Prompts */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.prod-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:all var(--t);position:relative}
-.prod-card:hover{border-color:var(--cyan);box-shadow:0 8px 30px rgba(0,0,0,.2)}
-.prod-card .cat{display:inline-block;padding:.15rem .5rem;background:rgba(0, 212, 255,.08);border-radius:6px;font-size:.7rem;color:var(--cyan);margin-bottom:.4rem;font-weight:600}
-.prod-card strong{font-size:.85rem;display:block;margin-bottom:.3rem}
-.prod-card code{display:block;background:var(--bg);padding:.6rem;border-radius:var(--r-sm);font-size:.78rem;color:var(--text2);margin-top:.3rem;word-break:break-all;line-height:1.4;max-height:60px;overflow:hidden;position:relative}
-.prod-card .lock{position:absolute;inset:0;background:rgba(15,15,28,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;border-radius:var(--r);opacity:0;pointer-events:none;transition:all var(--t)}
-.prod-card.premium .lock{opacity:1;pointer-events:all}
-.lock-inner{text-align:center}
-.lock-inner span{display:block;font-size:2rem;margin-bottom:.5rem}
-.lock-inner p{font-size:.85rem;color:var(--text2);margin-bottom:.8rem}
-.lock-inner a{padding:.5rem 1.5rem;background:var(--grad);border-radius:var(--r-sm);color:#000;font-weight:600;font-size:.85rem}
-
-/* Features */
-.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.fc{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;transition:all var(--t)}
-.fc:hover{border-color:rgba(0, 212, 255,.15);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
-.fiv{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:var(--r);margin-bottom:1rem}
-.fic-red{background:rgba(0, 212, 255,.08);color:var(--cyan)}
-.fic-gold{background:rgba(255,215,0,.08);color:#ffd700}
-.fic-blue{background:rgba(0, 102, 255,.08);color:var(--cyan)}
-.fic-purp{background:rgba(200,130,255,.08);color:#c882ff}
-.ft{font-size:1rem;font-weight:700;margin-bottom:.4rem}
-.fd{font-size:.85rem;color:var(--text2);line-height:1.6}
-
-/* CTA */
-.cta-sec{padding:5rem 0}
-.cta-c{position:relative;background:linear-gradient(135deg,rgba(0, 212, 255,.04),rgba(0, 102, 255,.04));border:1px solid rgba(0, 212, 255,.15);border-radius:var(--r-xl);padding:4rem;text-align:center;overflow:hidden}
-.cta-g{position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(0, 212, 255,.05),transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
-.cta-z{position:relative;z-index:1}
-.cta-t{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1rem}
-.cta-d{font-size:1rem;color:var(--text2);max-width:550px;margin:0 auto 1.5rem;line-height:1.6}
-.cta-pr{display:flex;justify-content:center;align-items:center;gap:.75rem;flex-wrap:wrap;font-size:.9rem;color:#ffd700;margin-bottom:2rem}
-.cta-dot{color:var(--text3)}
-.cta-ac{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-/* FAQ */
-.fq-l{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
-.fq-i{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--t)}
-.fq-i[open]{border-color:rgba(0, 212, 255,.18);box-shadow:0 4px 20px rgba(0,0,0,.15)}
-.fq-i summary{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;list-style:none;user-select:none}
-.fq-i summary::-webkit-details-marker{display:none}
-.fq-q{font-size:.92rem;font-weight:600;color:var(--text);line-height:1.4}
-.fq-c{color:var(--text3);transition:transform var(--t);flex-shrink:0;display:flex;align-items:center}
-.fq-i[open] .fq-c{transform:rotate(180deg);color:var(--cyan)}
-.fq-a{padding:0 1.5rem 1.2rem;font-size:.88rem;color:var(--text2);line-height:1.7}
-.fq-a a{color:var(--cyan);font-weight:500}
-.fq-a a:hover{color:var(--cyan)}
-
-/* Footer */
-.ftr{border-top:1px solid var(--border);padding:4rem 0 2rem;margin-top:2rem}
-.ft{display:flex;justify-content:space-between;gap:3rem;flex-wrap:wrap;margin-bottom:3rem}
-.fb{max-width:260px}
-.fl{font-size:1.5rem;font-weight:900;text-decoration:none;color:var(--text);letter-spacing:-.03em}
-.fd2{font-size:.85rem;color:var(--text3);margin-top:.75rem;line-height:1.5}
-.fl2{display:flex;gap:3rem}
-.fc2{display:flex;flex-direction:column;gap:.6rem}
-.fc2 h5{font-size:.8rem;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
-.fc2 a{font-size:.875rem;color:var(--text2);text-decoration:none;transition:color var(--t)}
-.fc2 a:hover{color:var(--cyan)}
-.fb2{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:2rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--text3)}
-
-/* N8N intro card */
-.n8n-intro{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:2.5rem;margin-bottom:2.5rem}
-.n8n-intro h3{font-size:1.3rem;font-weight:700;margin-bottom:.8rem}
-.n8n-intro p{color:var(--text2);font-size:.92rem;line-height:1.7;margin-bottom:1rem}
-.n8n-use-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.6rem}
-.n8n-use-cases .use-case{display:flex;align-items:center;gap:.5rem;padding:.5rem .8rem;background:rgba(0, 212, 255,.04);border:1px solid rgba(0, 212, 255,.08);border-radius:var(--r-sm);font-size:.82rem;color:var(--text2);transition:all var(--t)}
-.n8n-use-cases .use-case:hover{background:rgba(0, 212, 255,.07);color:var(--text);border-color:rgba(0, 212, 255,.15)}
-
-/* Search */
-.search-box{display:flex;gap:.5rem;margin:1.5rem 0;flex-wrap:wrap}
-.search-box input{flex:1;min-width:200px;padding:.75rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-size:.9rem;outline:none;transition:border-color var(--t),box-shadow var(--t);font-family:inherit}
-.search-box input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,212,255,.08)}
-.search-box input::placeholder{color:var(--text3)}
-
-/* Animations */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.revealed{opacity:1;transform:translateY(0)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* Paywall in examples */
-.example-lock{position:relative}
-.example-lock .blur{filter:blur(8px);pointer-events:none;user-select:none}
-.example-lock .paywall{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(15,15,28,.55);backdrop-filter:blur(4px);border-radius:var(--r-lg)}
-.paywall-inner{text-align:center}
-.paywall-inner .icon{font-size:2rem;display:block;margin-bottom:.3rem}
-.paywall-inner p{font-size:.85rem;color:var(--text2);margin-bottom:.6rem}
-.paywall-inner a{padding:.5rem 1.5rem;background:var(--grad);border-radius:var(--r-sm);color:#000;font-weight:600;font-size:.82rem;display:inline-block}
-
-/* --- Responsive --- */
-@media(max-width:1024px){
-  .fg{grid-template-columns:repeat(2,1fr)}
-  .sg{flex-wrap:wrap;gap:2rem}.sdv{display:none}.si{min-width:120px}
-}
-@media(max-width:768px){
-  .nl{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,15,28,.98);backdrop-filter:blur(24px);flex-direction:column;justify-content:center;gap:.5rem;transform:translateY(-100%);opacity:0;transition:all var(--t);pointer-events:none}
-  .nl.active{transform:translateY(0);opacity:1;pointer-events:all}
-  .nl a{font-size:1.2rem;padding:.75rem 2rem}
-  .nl .nav-cta{margin-left:0;margin-top:.5rem}
-  .nt{display:flex;z-index:1001}
-  .hero{padding:6rem 1.5rem 3rem;min-height:auto}
-  .h-st{gap:2rem}
-  .h-st-n{font-size:2rem}
-  .sec{padding:5rem 0}
-  .cat-grid{grid-template-columns:1fr 1fr}
-  .fg{grid-template-columns:1fr}
-  .sg{flex-direction:column;gap:1.5rem}
-  .cta-c{padding:2rem 1.5rem}
-  .cta-pr{flex-direction:column;gap:.25rem}
-  .cta-dot{display:none}
-  .ft{flex-direction:column;gap:2rem}
-  .fl2{gap:2rem}
-  .fb2{flex-direction:column;text-align:center}
-  .prod-grid{grid-template-columns:1fr}
-  .n8n-use-cases{grid-template-columns:1fr 1fr}
-}
-@media(max-width:480px){
-  .h-t{font-size:2rem}
-  .h-a,.cta-ac{flex-direction:column;align-items:center}
-  .btn{width:100%;justify-content:center}
-  .btn-l{padding:.85rem 1.5rem}
-  .sn{font-size:1.5rem}
-  .st{font-size:1.5rem}
-  .cta-sec{padding:2rem 0}
-  .cat-grid{grid-template-columns:1fr}
-  .n8n-use-cases{grid-template-columns:1fr}
-}
-</style>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110451940','ym');
-ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/110451940" style="position:absolute;left:-9999px" alt=""></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"V3Ko","url":"https://v3ko.ru","description":"Платформа AI-продуктов и автоматизаций"}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "V3Ko",
+    "url": "https://v3ko.ru",
+    "description": "Платформа AI-продуктов и автоматизаций"
+  }</script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110451940','ym');
+  ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110451940" style="position:absolute;left:-9999px" alt=""></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
+<!-- ====== NAVBAR ====== -->
 <nav class="navbar" id="navbar">
-  <div class="nv"><a href="/" class="logo">V<span>3</span>Ko</a>
+  <div class="nv">
+    <a href="/" class="logo">V<span>3</span>Ko</a>
     <div class="nl">
-      <a href="#n8n">N8N</a>
-      <a href="#prompts">Промпты</a>
-      <a href="#features">Почему</a>
-      <a href="#faq">FAQ</a>
+      <a href="/" class="active">Главная</a>
+      <a href="n8n.html">N8N</a>
+      <a href="prompts.html">Промпты</a>
+      <a href="pricing.html">Цены</a>
+      <a href="blog/">Блог</a>
       <a href="https://t.me/ai_vmasterke">Канал</a>
       <a href="https://t.me/Rob46_bot" class="nav-cta">Начать</a>
     </div>
@@ -257,15 +50,21 @@ ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </nav>
 
-<!-- === HERO === -->
+<!-- ====== HERO ====== -->
 <section class="hero">
-  <div class="h-bg"><div class="h-grid"></div><div class="h-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div></div>
+  <div class="h-bg">
+    <div class="h-grid"></div>
+    <div class="h-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <div class="hero-illustration">
+      <object type="image/svg+xml" data="public/hero-illustration.svg" aria-label="AI автоматизация">AI</object>
+    </div>
+  </div>
   <div class="h-c">
     <div class="h-badge">AI-экосистема</div>
-    <h1 class="h-t">AI-продукты,<br><span class="gradient-text">которые работают</span></h1>
+    <h1 class="h-t">AI-продукты, <span class="gradient-text">которые работают</span></h1>
     <p class="h-s">Готовые решения с AI-поддержкой. Без сложных настроек и подписок на API. Оплата звёздами Telegram.</p>
     <div class="h-a">
-      <a href="#n8n" class="btn btn-p">Смотреть каталог ↓</a>
+      <a href="n8n.html" class="btn btn-p">Смотреть каталог ↓</a>
       <a href="https://t.me/ai_vmasterke" class="btn btn-s">Telegram канал</a>
     </div>
     <div class="h-st">
@@ -276,166 +75,104 @@ ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </section>
 
-<!-- === N8N CATALOG === -->
-<section class="sec" id="n8n">
+<!-- ====== PRODUCTS ====== -->
+<section class="sec" id="products">
   <div class="container">
-    <div class="sh reveal"><span class="sl">n8n</span><h2 class="st">Каталог <span class="gradient-text">шаблонов</span></h2><p class="sd">9 580 готовых workflow для автоматизации бизнеса. Бери и импортируй в свой n8n.</p></div>
-
-    <!-- Intro -->
-    <div class="n8n-intro reveal">
-      <h3>🔧 Что такое n8n?</h3>
-      <p>n8n — open-source альтернатива Zapier и Make. Позволяет соединять любые сервисы без программирования: Email, AI, CRM, Telegram, базы данных, платежи и многое другое. Бесплатно для самостоятельного использования.</p>
-      <div class="n8n-use-cases">
-        <div class="use-case">📬 Автоответы на email</div>
-        <div class="use-case">🛒 Обработка заказов</div>
-        <div class="use-case">🤖 Чат-боты с AI</div>
-        <div class="use-case">📊 Отчёты в Google Sheets</div>
-        <div class="use-case">💬 Уведомления в Telegram</div>
-        <div class="use-case">🎨 Генерация картинок</div>
-        <div class="use-case">📝 Парсинг сайтов</div>
-        <div class="use-case">🔄 Интеграция CRM</div>
+    <div class="sh reveal">
+      <span class="sl">Продукты</span>
+      <h2 class="st">Все <span class="gradient-text">продукты V3Ko</span></h2>
+      <p class="sd">Четыре AI-продукта для бизнеса и творчества — всё в Telegram</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card reveal">
+        <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="6" stroke="#00d4ff" stroke-width="2" fill="none"/><path d="M14 20h20M14 28h14" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="20" r="2" fill="#00d4ff"/></svg></div>
+        <h3>N8N Каталог</h3>
+        <p>9 580 готовых workflow для автоматизации бизнеса. Бери и импортируй в свой n8n.</p>
+        <div class="price">100 <span style="font-size:.85rem;color:#ffd700">⭐</span><span class="price-sub"> / мес</span></div>
+        <a href="n8n.html" class="btn btn-p btn-sm">Подробнее →</a>
       </div>
-    </div>
-
-    <!-- Search -->
-    <div class="reveal">
-      <div class="search-box">
-        <input type="text" id="n8nSearch" placeholder="Найти шаблон... (например: email, telegram, gpt)">
+      <div class="prod-card reveal">
+        <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#0066ff" stroke-width="2" fill="none"/><path d="M24 14v10l8 4" stroke="#0066ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="4" fill="#00d4ff" opacity=".3"/></svg></div>
+        <h3>Промпты Дня</h3>
+        <p>Ежедневные промпты для Midjourney, ChatGPT, Claude и Stable Diffusion. 20 бесплатно.</p>
+        <div class="price">50 <span style="font-size:.85rem;color:#ffd700">⭐</span><span class="price-sub"> / мес</span></div>
+        <a href="prompts.html" class="btn btn-p btn-sm">Подробнее →</a>
       </div>
-    </div>
-
-    <!-- Category Tabs -->
-    <div class="nav-tabs reveal" id="catTabs">
-      <button class="active" data-cat="all">Все</button>
-      <button data-cat="ai">AI-агенты</button>
-      <button data-cat="email">Email</button>
-      <button data-cat="messaging">Мессенджеры</button>
-      <button data-cat="ecom">E-commerce</button>
-      <button data-cat="media">Медиа</button>
-      <button data-cat="data">Таблицы/БД</button>
-      <button data-cat="web">Сайты/API</button>
-      <button data-cat="marketing">Маркетинг</button>
-      <button data-cat="crm">Sales/CRM</button>
-      <button data-cat="finance">Финансы</button>
-      <button data-cat="docs">Документы</button>
-      <button data-cat="calendar">Календарь</button>
-    </div>
-
-    <!-- Category Grid -->
-    <div class="cat-grid show reveal" id="catGrid">
-      <div class="cat-chip" data-cats="ai"><span>🤖 AI-агенты и ChatGPT</span><span class="count">7 215</span></div>
-      <div class="cat-chip" data-cats="email"><span>📧 Email и рассылки</span><span class="count">4 282</span></div>
-      <div class="cat-chip" data-cats="messaging"><span>💬 Telegram, Slack</span><span class="count">3 653</span></div>
-      <div class="cat-chip" data-cats="ecom"><span>🛒 Интернет-магазины</span><span class="count">5 712</span></div>
-      <div class="cat-chip" data-cats="media"><span>🎨 Картинки и видео</span><span class="count">7 298</span></div>
-      <div class="cat-chip" data-cats="data"><span>📊 Таблицы и базы</span><span class="count">5 127</span></div>
-      <div class="cat-chip" data-cats="crm"><span>💼 Клиенты и продажи</span><span class="count">3 622</span></div>
-      <div class="cat-chip" data-cats="marketing"><span>📢 Маркетинг</span><span class="count">8 669</span></div>
-      <div class="cat-chip" data-cats="finance"><span>💰 Финансы</span><span class="count">894</span></div>
-      <div class="cat-chip" data-cats="web"><span>🌐 Сайты и API</span><span class="count">9 577</span></div>
-      <div class="cat-chip" data-cats="calendar"><span>📅 Календарь</span><span class="count">4 062</span></div>
-      <div class="cat-chip" data-cats="docs"><span>📄 Документы и PDF</span><span class="count">7 828</span></div>
-    </div>
-
-    <!-- Examples -->
-    <div class="reveal" style="margin-top:3rem">
-      <div class="sh"><h2 class="st" style="font-size:1.8rem">Примеры <span class="gradient-text">шаблонов</span></h2></div>
-      <div class="ex-grid">
-        <div class="ex-card"><span class="ex-icon">📬</span><h4>AI Email Support</h4><p>Gmail + ChatGPT + Slack — AI анализирует входящие письма, отвечает клиентам, сложные запросы передаёт оператору.</p><div class="use">Для: поддержки клиентов, отдела продаж</div></div>
-        <div class="ex-card"><span class="ex-icon">🛒</span><h4>Abandoned Cart Recovery</h4><p>Автоматическое восстановление брошенных корзин Shopify: через час → письмо, через день → Telegram, через 3 дня → купон.</p><div class="use">Для: интернет-магазинов</div></div>
-        <div class="ex-card"><span class="ex-icon">🎨</span><h4>AI Image Generation</h4><p>Midjourney/DALL-E + Telegram — отправляешь промпт в чат, AI генерирует картинку, сохраняет в Google Drive и присылает ссылку.</p><div class="use">Для: контент-мейкеров, дизайнеров</div></div>
-        <div class="ex-card"><span class="ex-icon">💬</span><h4>Telegram AI Handoff</h4><p>Бот → AI отвечает на простые вопросы → если не может — передаёт диалог живому оператору в Slack с полным контекстом.</p><div class="use">Для: поддержки в Telegram</div></div>
-        <!-- Paywalled examples -->
-        <div class="ex-card example-lock">
-          <div class="blur"><span class="ex-icon">📊</span><h4>Weekly Report Generator</h4><p>Авто-сбор данных из CRM, Google Analytics, базы → AI пишет отчёт → отправляет в Telegram PDF</p><div class="use">Для: руководителей, аналитиков</div></div>
-          <div class="paywall"><div class="paywall-inner"><span class="icon">⭐</span><p>300+ шаблонов</p><a href="https://t.me/Rob46_bot" target="_blank">Открыть каталог</a></div></div>
-        </div>
-        <div class="ex-card example-lock">
-          <div class="blur"><span class="ex-icon">🤖</span><h4>AI Sales Agent</h4><p>ChatGPT анализирует переписку, предлагает следующий шаг, создаёт задачу в CRM, отправляет напоминание</p><div class="use">Для: отдела продаж</div></div>
-          <div class="paywall"><div class="paywall-inner"><span class="icon">⭐</span><p>400+ шаблонов</p><a href="https://t.me/Rob46_bot" target="_blank">Открыть каталог</a></div></div>
-        </div>
+      <div class="prod-card reveal">
+        <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6C14.06 6 6 14.06 6 24s8.06 18 18 18 18-8.06 18-18S33.94 6 24 6z" stroke="#c882ff" stroke-width="2" fill="none"/><path d="M18 28s2 4 6 4 6-4 6-4" stroke="#c882ff" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="20" r="2" fill="#c882ff"/><circle cx="30" cy="20" r="2" fill="#c882ff"/></svg></div>
+        <h3>AI Редакция</h3>
+        <p>AI-редакция Telegram канала @ai_vmasterke. Автоматический сбор, рерайт, публикация контента.</p>
+        <div class="price">Бесплатно</div>
+        <a href="https://t.me/ai_vmasterke" class="btn btn-s btn-sm">Перейти →</a>
       </div>
-    </div>
-
-    <div class="reveal" style="text-align:center;margin-top:2rem">
-      <a href="https://t.me/Rob46_bot" class="btn btn-p btn-l">Открыть полный каталог в Telegram →</a>
-      <p style="color:var(--text3);font-size:.8rem;margin-top:.5rem">⭐ 100/мес · 3 шаблона в каждой категории бесплатно</p>
+      <div class="prod-card reveal">
+        <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 24c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12" stroke="#00d4ff" stroke-width="2" fill="none"/><path d="M24 28V20" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="32" r="2" fill="#00d4ff"/><path d="M18 24h12" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Voice Assistant</h3>
+        <p>Голосовой AI-ассистент в Telegram. Распознаёт речь, отвечает голосом. Работает на ChatGPT.</p>
+        <div class="price">Бесплатно</div>
+        <a href="https://t.me/VoiceV3k_bot" class="btn btn-s btn-sm">Попробовать →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- === PROMPTS === -->
-<section class="sec" id="prompts" style="background:var(--bg2)">
-  <div class="container">
-    <div class="sh reveal"><span class="sl">Промпты</span><h2 class="st">Ежедневные <span class="gradient-text">промпты</span></h2><p class="sd">Для Midjourney, ChatGPT, Claude и Stable Diffusion. 20 бесплатных примеров.</p></div>
-
-    <!-- Search -->
-    <div class="reveal">
-      <div class="search-box">
-        <input type="text" id="promptSearch" placeholder="Поиск промптов... (например: midjourney, код, бизнес)">
-      </div>
-    </div>
-
-    <!-- Category filter -->
-    <div class="nav-tabs reveal" id="promptTabs">
-      <button class="active" data-pcat="all">Все</button>
-      <button data-pcat="mj">🎨 Midjourney</button>
-      <button data-pcat="gpt">💬 ChatGPT</button>
-      <button data-pcat="claude">🤖 Claude</button>
-      <button data-pcat="sd">🖼️ Stable Diffusion</button>
-    </div>
-
-    <!-- Free prompts -->
-    <div class="prod-grid reveal" id="promptGrid">
-      <div class="prod-card" data-pcat="mj"><span class="cat">🎨 Midjourney</span><strong>Viking ship fog</strong><code>Viking longship emerging from thick fog, photorealistic, dramatic lighting, cinematic, 8k --ar 16:9</code></div>
-      <div class="prod-card" data-pcat="mj"><span class="cat">🎨 Midjourney</span><strong>Neon city rain</strong><code>Cyberpunk street at night with neon signs, heavy rain reflections, futuristic cars, volumetric lighting --ar 16:9 --v 6</code></div>
-      <div class="prod-card" data-pcat="mj"><span class="cat">🎨 Midjourney</span><strong>Glass architecture</strong><code>Futuristic glass building in biophilic design, hanging gardens, transparent walls, tropical plants --ar 4:3</code></div>
-      <div class="prod-card" data-pcat="gpt"><span class="cat">💬 ChatGPT</span><strong>Email sequence</strong><code>Напиши welcome-серию из 3 писем для нового клиента. Тон: дружеский, профессиональный. Продукт: AI-сервис автоматизации.</code></div>
-      <div class="prod-card" data-pcat="gpt"><span class="cat">💬 ChatGPT</span><strong>Product description</strong><code>Напиши продающее описание для товара. Выдели 3 выгоды, формула "Проблема→Решение→Результат". 150-200 слов.</code></div>
-      <div class="prod-card" data-pcat="claude"><span class="cat">🤖 Claude</span><strong>Codebase overview</strong><code>Give me an overview of this codebase: architecture, key directories, dependencies, and data flow.</code></div>
-      <div class="prod-card" data-pcat="claude"><span class="cat">🤖 Claude</span><strong>Architecture plan</strong><code>Plan the architecture for [feature]. Include: data model, API endpoints, component tree, error handling.</code></div>
-      <div class="prod-card" data-pcat="sd"><span class="cat">🖼️ SD</span><strong>Mountain landscape</strong><code>Majestic mountain peak at golden hour, clouds swirling around summit, alpine lake reflection, photorealistic</code></div>
-      <div class="prod-card" data-pcat="sd"><span class="cat">🖼️ SD</span><strong>Fantasy castle</strong><code>Floating castle in the sky with waterfalls, magical glowing crystals, dragons circling, epic fantasy style</code></div>
-      <!-- Paywalled prompts -->
-      <div class="prod-card premium reveal" data-pcat="mj"><span class="cat">🎨 Midjourney</span><strong>Steampunk city</strong><code>Steampunk cityscape with brass airships, Victorian architecture, warm sunset lighting --ar 16:9</code><div class="lock"><div class="lock-inner"><span>⭐</span><p>Ещё 236+ промптов</p><a href="https://t.me/Rob46_bot" target="_blank">Открыть доступ</a></div></div></div>
-      <div class="prod-card premium reveal" data-pcat="gpt"><span class="cat">💬 ChatGPT</span><strong>Meeting summary</strong><code>Суммируй встречу в 3-5 пунктах. Формат: "Решение", "Шаги", "Дедлайн".</code><div class="lock"><div class="lock-inner"><span>⭐</span><p>Ещё 60+ промптов</p><a href="https://t.me/Rob46_bot" target="_blank">Открыть доступ</a></div></div></div>
-      <div class="prod-card premium reveal" data-pcat="claude"><span class="cat">🤖 Claude</span><strong>Testing strategy</strong><code>Write unit tests for [module]. Cover: happy path, edge cases, error states.</code><div class="lock"><div class="lock-inner"><span>⭐</span><p>Ещё 70+ промптов</p><a href="https://t.me/Rob46_bot" target="_blank">Открыть доступ</a></div></div></div>
-    </div>
-
-    <div class="reveal" style="text-align:center;margin-top:2rem">
-      <a href="https://t.me/Rob46_bot" class="btn btn-p btn-l">Получить все промпты →</a>
-      <p style="color:var(--text3);font-size:.8rem;margin-top:.5rem">⭐ 50/мес · Ежедневное обновление</p>
-    </div>
-  </div>
-</section>
-
-<!-- === STATS === -->
+<!-- ====== STATS ====== -->
 <section class="sb reveal">
-  <div class="container"><div class="sg">
-    <div class="si"><span class="sn gradient-text">9 580</span><span class="sd2">n8n шаблонов</span></div>
-    <div class="sdv"></div>
-    <div class="si"><span class="sn gradient-text">246+</span><span class="sd2">промптов</span></div>
-    <div class="sdv"></div>
-    <div class="si"><span class="sn gradient-text">4</span><span class="sd2">AI-продукта</span></div>
-    <div class="sdv"></div>
-    <div class="si"><span class="sn gradient-text">100%</span><span class="sd2">Telegram Stars</span></div>
-  </div></div>
+  <div class="container">
+    <div class="sg">
+      <div class="si"><span class="sn gradient-text">9 580</span><span class="sd2">n8n шаблонов</span></div>
+      <div class="sdv"></div>
+      <div class="si"><span class="sn gradient-text">246+</span><span class="sd2">промптов</span></div>
+      <div class="sdv"></div>
+      <div class="si"><span class="sn gradient-text">4</span><span class="sd2">AI-продукта</span></div>
+      <div class="sdv"></div>
+      <div class="si"><span class="sn gradient-text">100%</span><span class="sd2">Telegram Stars</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- === FEATURES === -->
+<!-- ====== FEATURES ====== -->
 <section class="sec" id="features">
   <div class="container">
-    <div class="sh reveal"><span class="sl">Преимущества</span><h2 class="st">Почему <span class="gradient-text">V3Ko</span></h2><p class="sd">Мы сделали AI-продукты доступными — без боли и сложных настроек</p></div>
+    <div class="sh reveal">
+      <span class="sl">Преимущества</span>
+      <h2 class="st">Почему <span class="gradient-text">V3Ko</span></h2>
+      <p class="sd">Мы сделали AI-продукты доступными — без боли и сложных настроек</p>
+    </div>
     <div class="fg">
-      <div class="fc reveal"><div class="fiv fic-red"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h4 class="ft">Работает сразу</h4><p class="fd">Не нужно настраивать API, ставить сервера. Открой бота — пользуйся.</p></div>
-      <div class="fc reveal"><div class="fiv fic-gold"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h4 class="ft">Оплата звёздами</h4><p class="fd">Никаких карт. Платишь звёздами Telegram — доступ мгновенно.</p></div>
-      <div class="fc reveal"><div class="fiv fic-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><h4 class="ft">Готовые шаблоны</h4><p class="fd">9 580 workflow для любой задачи. Импорт в один клик. 3 бесплатно.</p></div>
-      <div class="fc reveal"><div class="fiv fic-purp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg></div><h4 class="ft">Ежедневное обновление</h4><p class="fd">Новые промпты каждое утро. База шаблонов растёт автоматически.</p></div>
+      <div class="fc reveal">
+        <div class="fiv fic-cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h4 class="ft">Работает сразу</h4>
+        <p class="fd">Не нужно настраивать API, ставить сервера. Открой бота — пользуйся.</p>
+      </div>
+      <div class="fc reveal">
+        <div class="fiv fic-gold">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4 class="ft">Оплата звёздами</h4>
+        <p class="fd">Никаких карт. Платишь звёздами Telegram — доступ мгновенно.</p>
+      </div>
+      <div class="fc reveal">
+        <div class="fiv fic-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h4 class="ft">Готовые шаблоны</h4>
+        <p class="fd">9 580 workflow для любой задачи. Импорт в один клик. 3 бесплатно.</p>
+      </div>
+      <div class="fc reveal">
+        <div class="fiv fic-purp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+        </div>
+        <h4 class="ft">Ежедневное обновление</h4>
+        <p class="fd">Новые промпты каждое утро. База шаблонов растёт автоматически.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- === CTA === -->
+<!-- ====== CTA ====== -->
 <section class="cta-sec reveal">
   <div class="container">
     <div class="cta-c">
@@ -443,7 +180,13 @@ ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
       <div class="cta-z">
         <h2 class="cta-t">🔥 Начни с любого продукта</h2>
         <p class="cta-d">Каталог n8n шаблонов и ежедневные промпты — в одном боте. 3 шаблона в каждой категории бесплатно.</p>
-        <div class="cta-pr"><span>⭐ n8n: 100 / мес</span><span class="cta-dot">·</span><span>⭐ Промпты: 50 / мес</span><span class="cta-dot">·</span><span>⭐ Комбо: 150 / мес</span></div>
+        <div class="cta-pr">
+          <span>⭐ n8n: 100 / мес</span>
+          <span class="cta-dot">·</span>
+          <span>⭐ Промпты: 50 / мес</span>
+          <span class="cta-dot">·</span>
+          <span>⭐ Комбо: 150 / мес</span>
+        </div>
         <div class="cta-ac">
           <a href="https://t.me/Rob46_bot" class="btn btn-p btn-l">Открыть каталог →</a>
           <a href="https://t.me/VoiceV3k_bot" class="btn btn-s btn-l">Попробовать Voice</a>
@@ -453,103 +196,168 @@ ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
   </div>
 </section>
 
-<!-- === FAQ === -->
-<section class="sec" id="faq">
+<!-- ====== BLOG PREVIEW ====== -->
+<section class="sec" id="blog-preview">
   <div class="container">
-    <div class="sh reveal"><span class="sl">FAQ</span><h2 class="st">Часто задаваемые <span class="gradient-text">вопросы</span></h2></div>
-    <div class="fq-l reveal">
-      <details class="fq-i"><summary><span class="fq-q">Что такое V3Ko?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>V3Ko — платформа AI-продуктов: n8n шаблоны для автоматизации, ежедневные промпты для нейросетей, голосовой AI-ассистент и AI-редакция контента. Всё работает через Telegram.</p></div></details>
-      <details class="fq-i"><summary><span class="fq-q">Что такое n8n и зачем он нужен?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>n8n — open-source конструктор автоматизации (как Zapier, но бесплатный). Соединяет сервисы: Email → AI → Telegram → CRM → Базы данных. Наши шаблоны — готовые схемы, которые можно импортировать в свой n8n и сразу использовать. <a href="https://n8n.io" target="_blank">n8n.io</a></p></div></details>
-      <details class="fq-i"><summary><span class="fq-q">Для каких задач подходят шаблоны?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>Email-рассылки и автоответы, обработка заказов интернет-магазинов, чат-боты с AI, генерация картинок, уведомления в Telegram/Slack, сбор данных и отчёты, интеграция CRM, парсинг сайтов, работа с документами — и многое другое.</p></div></details>
-      <details class="fq-i"><summary><span class="fq-q">Как получить доступ?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>Открой бота в Telegram. Там доступны каталог n8n шаблонов и подписка на промпты. Voice Assistant — бесплатно и без подписки. Оплата звёздами Telegram.</p></div></details>
-      <details class="fq-i"><summary><span class="fq-q">Есть ли бесплатный доступ?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>Да. В каждой категории n8n шаблонов — 3 бесплатных sample. 20 промптов бесплатно на сайте. Voice Assistant — полностью бесплатен.</p></div></details>
-      <details class="fq-i"><summary><span class="fq-q">Как оплатить подписку звёздами?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="fq-a"><p>В боте выберите тариф → оплата через Telegram Stars. Звёзды можно купить внутри Telegram. После оплаты доступ открывается мгновенно.</p></div></details>
+    <div class="sh reveal">
+      <span class="sl">Блог</span>
+      <h2 class="st">Полезные <span class="gradient-text">статьи</span></h2>
+      <p class="sd">Гайды по автоматизации, промптам и AI-инструментам</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="b-cat">Автоматизация</div>
+        <h3><a href="blog/n8n-avtomatizacia-biznesa.html">N8N для автоматизации бизнеса: полный гайд 2026</a></h3>
+        <div class="b-excerpt">Как настроить n8n с нуля, лучшие шаблоны для email, Telegram, CRM и AI. Примеры workflow для малого бизнеса.</div>
+        <div class="b-meta">
+          <span>7 мин чтения</span>
+          <span class="tag">n8n</span>
+          <span class="tag">автоматизация</span>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="b-cat">Промпты</div>
+        <h3><a href="blog/prompty-dlya-neyrosetey.html">Промпты для нейросетей: как писать эффективные запросы</a></h3>
+        <div class="b-excerpt">Лучшие техники составления промптов для ChatGPT, Midjourney, Claude. Примеры и шаблоны для любых задач.</div>
+        <div class="b-meta">
+          <span>5 мин чтения</span>
+          <span class="tag">промпты</span>
+          <span class="tag">AI</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:2rem">
+      <a href="blog/" class="btn btn-s">Все статьи →</a>
     </div>
   </div>
 </section>
 
-<!-- === FOOTER === -->
+<!-- ====== FAQ ====== -->
+<section class="sec" id="faq">
+  <div class="container">
+    <div class="sh reveal">
+      <span class="sl">FAQ</span>
+      <h2 class="st">Часто задаваемые <span class="gradient-text">вопросы</span></h2>
+    </div>
+    <div class="fq-l reveal">
+      <details class="fq-i">
+        <summary><span class="fq-q">Что такое V3Ko?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>V3Ko — платформа AI-продуктов: n8n шаблоны для автоматизации, ежедневные промпты для нейросетей, голосовой AI-ассистент и AI-редакция контента. Всё работает через Telegram.</p></div>
+      </details>
+      <details class="fq-i">
+        <summary><span class="fq-q">Что такое n8n и зачем он нужен?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>n8n — open-source конструктор автоматизации (как Zapier, но бесплатный). Соединяет сервисы: Email → AI → Telegram → CRM → Базы данных. Наши шаблоны — готовые схемы, которые можно импортировать в свой n8n и сразу использовать. <a href="https://n8n.io" target="_blank">n8n.io</a></p></div>
+      </details>
+      <details class="fq-i">
+        <summary><span class="fq-q">Для каких задач подходят шаблоны?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>Email-рассылки и автоответы, обработка заказов интернет-магазинов, чат-боты с AI, генерация картинок, уведомления в Telegram/Slack, сбор данных и отчёты, интеграция CRM, парсинг сайтов, работа с документами — и многое другое.</p></div>
+      </details>
+      <details class="fq-i">
+        <summary><span class="fq-q">Как получить доступ?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>Открой бота в Telegram. Там доступны каталог n8n шаблонов и подписка на промпты. Voice Assistant — бесплатно и без подписки. Оплата звёздами Telegram.</p></div>
+      </details>
+      <details class="fq-i">
+        <summary><span class="fq-q">Есть ли бесплатный доступ?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>Да. В каждой категории n8n шаблонов — 3 бесплатных sample. 20 промптов бесплатно на сайте. Voice Assistant — полностью бесплатен.</p></div>
+      </details>
+      <details class="fq-i">
+        <summary><span class="fq-q">Как оплатить подписку звёздами?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>В боте выберите тариф → оплата через Telegram Stars. Звёзды можно купить внутри Telegram. После оплаты доступ открывается мгновенно.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
 <footer class="ftr">
   <div class="container">
     <div class="ft">
-      <div class="fb"><a href="/" class="fl">V<span style="color:var(--cyan)">3</span>Ko</a><p class="fd2">AI-продукты и автоматизации для Telegram</p></div>
+      <div class="fb">
+        <a href="/" class="fl">V<span style="color:var(--cyan)">3</span>Ko</a>
+        <p class="fd2">AI-продукты и автоматизации для Telegram</p>
+      </div>
       <div class="fl2">
-        <div class="fc2"><h5>Продукты</h5><a href="#n8n">N8N Каталог</a><a href="#prompts">Промпты дня</a><a href="#voice">Voice Assistant</a></div>
-        <div class="fc2"><h5>Сообщество</h5><a href="https://t.me/ai_vmasterke">Telegram Канал</a><a href="https://t.me/vmasterke">Telegram Форум</a><a href="https://github.com/manoliur">GitHub</a></div>
+        <div class="fc2">
+          <h5>Продукты</h5>
+          <a href="n8n.html">N8N Каталог</a>
+          <a href="prompts.html">Промпты дня</a>
+          <a href="pricing.html">Цены и тарифы</a>
+          <a href="https://t.me/VoiceV3k_bot">Voice Assistant</a>
+        </div>
+        <div class="fc2">
+          <h5>Информация</h5>
+          <a href="blog/">Блог</a>
+          <a href="blog/n8n-avtomatizacia-biznesa.html">N8N гайд</a>
+          <a href="blog/prompty-dlya-neyrosetey.html">Промпты гайд</a>
+        </div>
+        <div class="fc2">
+          <h5>Сообщество</h5>
+          <a href="https://t.me/ai_vmasterke">Telegram Канал</a>
+          <a href="https://t.me/vmasterke">Telegram Форум</a>
+          <a href="https://github.com/manoliur">GitHub</a>
+        </div>
       </div>
     </div>
-    <div class="fb2"><span>© 2026 V3Ko</span><span>Оплата звёздами Telegram</span></div>
+    <div class="fb2">
+      <span>© 2026 V3Ko</span>
+      <span>Оплата звёздами Telegram</span>
+    </div>
   </div>
 </footer>
 
 <script>
-// === Mobile nav ===
+// Mobile nav
 document.getElementById('nt').addEventListener('click', function(){
-  document.querySelector('.nl').classList.toggle('active');this.classList.toggle('active')
+  document.querySelector('.nl').classList.toggle('active');
+  this.classList.toggle('active');
 });
-document.querySelectorAll('.nl a').forEach(l=>l.addEventListener('click',()=>{
+document.querySelectorAll('.nl a').forEach(l => l.addEventListener('click', () => {
   document.querySelector('.nl').classList.remove('active');
-  document.getElementById('nt').classList.remove('active')
-}))
+  document.getElementById('nt').classList.remove('active');
+}));
 
-// === Scroll reveal ===
-const rv=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){let t=parseInt(e.target.dataset.delay)||0;e.target.style.transitionDelay=t*.15+'s';e.target.classList.add('revealed');rv.unobserve(e.target)}})},{threshold:.1})
-document.querySelectorAll('.reveal').forEach(e=>rv.observe(e))
+// Scroll reveal
+const rv = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      let t = parseInt(e.target.dataset.delay) || 0;
+      e.target.style.transitionDelay = t * .15 + 's';
+      e.target.classList.add('revealed');
+      rv.unobserve(e.target);
+    }
+  });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(e => rv.observe(e));
 
-// === Navbar scroll ===
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.pageYOffset>50)})
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50);
+});
 
-// === Counter ===
-const cnt=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){let t=parseInt(e.target.dataset.c),n=e.target;!function e(t){let i=performance.now(),o=Math.min((t-i)/2000,1);n.textContent=Math.floor(o*parseInt(n.dataset.c)).toLocaleString('ru');o<1&&requestAnimationFrame(e);n.textContent=parseInt(n.dataset.c).toLocaleString('ru')}();cnt.unobserve(n)}})},{threshold:.5})
-document.querySelectorAll('[data-c]').forEach(e=>cnt.observe(e))
+// Counter animation
+const cnt = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      let t = parseInt(e.target.dataset.c), n = e.target;
+      (function e(t) {
+        let i = performance.now(), o = Math.min((t - i) / 2000, 1);
+        n.textContent = Math.floor(o * parseInt(n.dataset.c)).toLocaleString('ru');
+        o < 1 && requestAnimationFrame(e);
+        if (o >= 1) n.textContent = parseInt(n.dataset.c).toLocaleString('ru');
+      })();
+      cnt.unobserve(n);
+    }
+  });
+}, { threshold: .5 });
+document.querySelectorAll('[data-c]').forEach(e => cnt.observe(e));
 
-// === Smooth scroll ===
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();let t=this.getAttribute('href');if(t!=='#'){let n=document.querySelector(t);n&&n.scrollIntoView({behavior:'smooth',block:'start'})}}))
-
-// === FAQ accordion ===
-document.querySelectorAll('.fq-i summary').forEach(s=>s.addEventListener('click',function(e){let t=this.closest('details'),n=t.open;document.querySelectorAll('.fq-i').forEach(i=>i!==t&&i.removeAttribute('open'));t.open=!n;e.preventDefault()}))
-
-// === N8N category filter ===
-document.querySelectorAll('#catTabs button').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('#catTabs button').forEach(b=>b.classList.remove('active'))
-    this.classList.add('active')
-    let cat=this.dataset.cat
-    document.querySelectorAll('#catGrid .cat-chip').forEach(chip=>{
-      chip.style.display=cat==='all'||chip.dataset.cats.includes(cat)?'flex':'none'
-    })
-  })
-})
-
-// === N8N search ===
-document.getElementById('n8nSearch').addEventListener('input',function(){
-  let q=this.value.toLowerCase()
-  document.querySelectorAll('#catGrid .cat-chip').forEach(chip=>{
-    chip.style.display=q===''||chip.textContent.toLowerCase().includes(q)?'flex':'none'
-  })
-})
-
-// === Prompt category filter ===
-document.querySelectorAll('#promptTabs button').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('#promptTabs button').forEach(b=>b.classList.remove('active'))
-    this.classList.add('active')
-    let cat=this.dataset.pcat
-    document.querySelectorAll('#promptGrid .prod-card').forEach(card=>{
-      if(cat==='all'){card.style.display=''}else{
-        card.style.display=card.dataset.pcat===cat?'':'none'
-      }
-    })
-  })
-})
-
-// === Prompt search ===
-document.getElementById('promptSearch').addEventListener('input',function(){
-  let q=this.value.toLowerCase()
-  document.querySelectorAll('#promptGrid .prod-card').forEach(card=>{
-    card.style.display=q===''||card.textContent.toLowerCase().includes(q)?'':'none'
-  })
-})
+// FAQ accordion
+document.querySelectorAll('.fq-i summary').forEach(s => s.addEventListener('click', function(e) {
+  let t = this.closest('details'), n = t.open;
+  document.querySelectorAll('.fq-i').forEach(i => i !== t && i.removeAttribute('open'));
+  t.open = !n;
+  e.preventDefault();
+}));
 </script>
 </body>
 </html>

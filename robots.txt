@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://v3ko.ru/sitemap.xml

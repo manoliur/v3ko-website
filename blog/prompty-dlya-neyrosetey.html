@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Промпты для нейросетей: как писать эффективные запросы — Блог V3Ko</title>
+  <meta name="description" content="Как правильно писать промпты для ChatGPT, Midjourney, Claude и Stable Diffusion. Лучшие техники, примеры и шаблоны промптов для любых задач.">
+  <meta name="keywords" content="промпты для нейросетей, промпты chatgpt, midjourney prompts, как писать промпты, техники промптов">
+  <meta property="og:title" content="Промпты для нейросетей: как писать эффективные запросы — Блог V3Ko">
+  <meta property="og:description" content="Лучшие техники составления промптов для ChatGPT, Midjourney, Claude. Примеры, шаблоны и чек-лист.">
+  <meta property="og:image" content="https://v3ko.ru/public/og-image.svg">
+  <meta property="og:url" content="https://v3ko.ru/blog/prompty-dlya-neyrosetey.html">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://v3ko.ru/blog/prompty-dlya-neyrosetey.html">
+  <link rel="icon" type="image/svg+xml" href="../public/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Промпты для нейросетей: как писать эффективные запросы",
+    "description": "Лучшие техники составления промптов для нейросетей",
+    "datePublished": "2026-07-06",
+    "author": {"@type":"Organization","name":"V3Ko"}
+  }</script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110451940','ym');
+  ym(110451940,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110451940" style="position:absolute;left:-9999px" alt=""></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nv">
+    <a href="/" class="logo">V<span>3</span>Ko</a>
+    <div class="nl">
+      <a href="/">Главная</a>
+      <a href="../n8n.html">N8N</a>
+      <a href="../prompts.html">Промпты</a>
+      <a href="../pricing.html">Цены</a>
+      <a href="../blog/" class="active">Блог</a>
+      <a href="https://t.me/ai_vmasterke">Канал</a>
+      <a href="https://t.me/Rob46_bot" class="nav-cta">Начать</a>
+    </div>
+    <button class="nt" id="nt" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="article-content">
+    <div class="article-header reveal">
+      <div class="page-breadcrumb" style="margin-bottom:1rem">
+        <a href="/">Главная</a><span class="sep">/</span><a href="../blog/">Блог</a><span class="sep">/</span><span>Промпты гайд</span>
+      </div>
+      <h1>Промпты для нейросетей: как писать эффективные запросы</h1>
+      <div class="meta">
+        <span>5 мин чтения</span>
+        <span>·</span>
+        <span>6 июля 2026</span>
+        <span>·</span>
+        <span class="tag">промпты</span>
+        <span class="tag">AI</span>
+      </div>
+    </div>
+
+    <div class="article-body reveal">
+      <p><strong>Промпт (prompt)</strong> — это запрос, который вы отправляете нейросети. Качество ответа напрямую зависит от того, как составлен промпт. Хороший промпт — это чёткая инструкция, которая не оставляет пространства для двусмысленностей.</p>
+
+      <div class="art-cta">
+        <p>💬 246+ готовых промптов для ChatGPT, Midjourney, Claude и Stable Diffusion. Ежедневное обновление.</p>
+        <a href="https://t.me/Rob46_bot" class="btn btn-p btn-sm">Получить все промпты →</a>
+      </div>
+
+      <h2>Универсальная формула промпта</h2>
+      <p>Для любой нейросети работает одна и та же структура:</p>
+      <blockquote>
+        <p><strong>[Роль] + [Контекст] + [Задача] + [Формат] + [Ограничения]</strong></p>
+      </blockquote>
+      <p><strong>Пример плохого промпта:</strong> «Напиши пост для Instagram»</p>
+      <p><strong>Пример хорошего промпта:</strong> «Ты — SMM-менеджер (роль). Мы запускаем AI-сервис для автоматизации (контекст). Напиши пост-знакомство на 500 знаков (задача). Используй дружеский тон, добавь 3 хештега (формат). Без эмодзи и восклицательных знаков (ограничения)»</p>
+
+      <h2>Техники промптов для ChatGPT</h2>
+
+      <h3>1. Chain-of-Thought (Цепочка рассуждений)</h3>
+      <p>Попросите AI рассуждать шаг за шагом. Вместо «Реши задачу» — «Реши задачу по шагам, объясняя каждый шаг». Это dramatically улучшает точность для сложных задач.</p>
+
+      <h3>2. Few-Shot (Примеры в промпте)</h3>
+      <p>Дайте 2-3 примера того, что хотите получить. ChatGPT отлично улавливает паттерны:</p>
+      <blockquote>
+        <p>«Напиши 3 варианта приветствия для email-рассылки. Формат как в примере:<br>
+        Пример: "Привет, {имя}! 👋 Готовы к переменам?" → "Привет, {имя}! 🚀 Ваш чек-лист готов."»</p>
+      </blockquote>
+
+      <h3>3. Ролевой промптинг (System Prompt)</h3>
+      <p>Чётко задайте роль. ChatGPT работает лучше, когда знает контекст:</p>
+      <ul>
+        <li>«Ты — эксперт по маркетингу с 10-летним опытом»</li>
+        <li>«Ты — Python-разработчик уровня Senior»</li>
+        <li>«Ты — копирайтер, специализирующийся на продающих текстах»</li>
+      </ul>
+
+      <h2>Промпты для Midjourney</h2>
+      <p>Для Midjourney важны визуальные описания и параметры. Базовая структура:</p>
+      <blockquote>
+        <p><strong>[Объект] + [Детали] + [Окружение] + [Освещение] + [Стиль] + [Параметры]</strong></p>
+      </blockquote>
+      <p><strong>Пример:</strong> <code>Viking longship emerging from thick fog, photorealistic, dramatic lighting, cinematic, 8k --ar 16:9 --v 6</code></p>
+      <p>Ключевые параметры Midjourney:</p>
+      <ul>
+        <li><code>--ar 16:9</code> — соотношение сторон (широкий формат)</li>
+        <li><code>--v 6</code> — версия модели (сейчас актуальна v6)</li>
+        <li><code>--s 250</code> — стилизация (50-1000, чем выше — тем артистичнее)</li>
+        <li><code>--iw 2</code> — вес изображения (при работе с reference)</li>
+      </ul>
+
+      <div class="art-cta">
+        <p>🎨 Больше промптов для Midjourney — в нашем каталоге. 80+ эксклюзивных промптов с параметрами.</p>
+        <a href="../prompts.html" class="btn btn-p btn-sm">Смотреть промпты →</a>
+      </div>
+
+      <h2>Промпты для Claude</h2>
+      <p>Claude отлично работает с кодом и техническими задачами. Лучшие практики:</p>
+      <ul>
+        <li><strong>Один запрос — одна задача:</strong> Claude лучше фокусируется на конкретной проблеме</li>
+        <li><strong>Прикрепляйте контекст:</strong> Дайте код, документацию или описание архитектуры</li>
+        <li><strong>Используйте XML-теги:</strong> Claude понимает структурированные запросы</li>
+      </ul>
+      <blockquote>
+        <p>«Review this PR. Check: logic errors, edge cases, performance issues, security vulnerabilities, code style. Here's the diff: <diff>...</diff>»</p>
+      </blockquote>
+
+      <h2>Промпты для Stable Diffusion</h2>
+      <p>SD требует более технических описаний. Важно указывать:</p>
+      <ul>
+        <li><strong>Negative prompt:</strong> что НЕ должно быть на картинке</li>
+        <li><strong>Sampler и Steps:</strong> DPM++ 2M Karras, 20-30 steps</li>
+        <li><strong>CFG Scale:</strong> 7-9 для баланса следования промпту</li>
+      </ul>
+      <p><strong>Пример:</strong> <code>Majestic mountain peak at golden hour, clouds swirling around summit, alpine lake reflection, photorealistic</code> С negative prompt: <code>blurry, low quality, deformed, watermark</code></p>
+
+      <h2>Чек-лист хорошего промпта</h2>
+      <ol>
+        <li>✅ Определена роль AI</li>
+        <li>✅ Дан контекст / background</li>
+        <li>✅ Чётко сформулирована задача</li>
+        <li>✅ Указан формат ответа</li>
+        <li>✅ Добавлены ограничения (длина, тон, стиль)</li>
+        <li>✅ Использованы примеры (few-shot) для сложных задач</li>
+        <li>✅ Запрос на русском или английском (в зависимости от модели)</li>
+      </ol>
+
+      <h2>Где брать готовые промпты?</h2>
+      <p>Наш каталог <a href="../prompts.html">промптов</a> содержит 246+ проверенных запросов для всех популярных нейросетей. 20 промптов доступны бесплатно прямо на сайте. Подписка стоит всего <strong>50 ⭐/мес</strong> и включает ежедневное обновление.</p>
+      <p><a href="../pricing.html">Смотреть тарифы →</a></p>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="../blog/">← Все статьи</a>
+      <a href="n8n-avtomatizacia-biznesa.html">Читать: N8N для бизнеса →</a>
+    </div>
+  </div>
+</article>
+
+<footer class="ftr">
+  <div class="container">
+    <div class="ft">
+      <div class="fb">
+        <a href="/" class="fl">V<span style="color:var(--cyan)">3</span>Ko</a>
+        <p class="fd2">AI-продукты и автоматизации для Telegram</p>
+      </div>
+      <div class="fl2">
+        <div class="fc2">
+          <h5>Продукты</h5>
+          <a href="../n8n.html">N8N Каталог</a>
+          <a href="../prompts.html">Промпты дня</a>
+          <a href="../pricing.html">Цены и тарифы</a>
+          <a href="https://t.me/VoiceV3k_bot">Voice Assistant</a>
+        </div>
+        <div class="fc2">
+          <h5>Информация</h5>
+          <a href="../blog/">Блог</a>
+          <a href="n8n-avtomatizacia-biznesa.html">N8N гайд</a>
+          <a href="prompty-dlya-neyrosetey.html">Промпты гайд</a>
+        </div>
+        <div class="fc2">
+          <h5>Сообщество</h5>
+          <a href="https://t.me/ai_vmasterke">Telegram Канал</a>
+          <a href="https://t.me/vmasterke">Telegram Форум</a>
+          <a href="https://github.com/manoliur">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="fb2">
+      <span>© 2026 V3Ko</span>
+      <span>Оплата звёздами Telegram</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('nt').addEventListener('click', function(){ document.querySelector('.nl').classList.toggle('active'); this.classList.toggle('active'); });
+document.querySelectorAll('.nl a').forEach(l => l.addEventListener('click', () => { document.querySelector('.nl').classList.remove('active'); document.getElementById('nt').classList.remove('active'); }));
+const rv = new IntersectionObserver(e => { e.forEach(e => { if (e.isIntersecting) { let t = parseInt(e.target.dataset.delay) || 0; e.target.style.transitionDelay = t * .15 + 's'; e.target.classList.add('revealed'); rv.unobserve(e.target); } }); }, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(e => rv.observe(e));
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50); });
+</script>
+</body>
+</html>

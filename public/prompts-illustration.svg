@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" fill="none">
+  <defs>
+    <linearGradient id="gp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+    <linearGradient id="gbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#0066ff" stop-opacity=".04"/>
+    </linearGradient>
+    <filter id="gg">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="30" y="30" width="640" height="340" rx="16" fill="url(#gbg)" stroke="var(--border)" stroke-width="1"/>
+
+  <!-- Light beam from top -->
+  <path d="M350,-10 L200,100 L500,100 Z" fill="url(#gbg)" opacity=".5"/>
+
+  <!-- Input prompt icon -->
+  <g transform="translate(100,130)">
+    <rect x="0" y="0" width="150" height="60" rx="10" fill="var(--card)" stroke="#5c5c80" stroke-width="1"/>
+    <text x="15" y="25" font-size="9" fill="#5c5c80" font-family="monospace">YOUR INPUT</text>
+    <text x="15" y="42" font-size="11" fill="#9494b0" font-family="monospace">"Generate image..."</text>
+  </g>
+
+  <!-- Arrow -->
+  <g>
+    <line x1="250" y1="160" x2="290" y2="160" stroke="url(#gp)" stroke-width="2" stroke-dasharray="4,3">
+      <animate attributeName="stroke-dashoffset" values="0;-14" dur="1s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- AI Model card -->
+  <g transform="translate(300,95)">
+    <rect x="0" y="0" width="160" height="130" rx="12" fill="var(--card)" stroke="#00d4ff" stroke-width="1.5" filter="url(#gg)"/>
+    
+    <!-- Neural network visual inside card -->
+    <g opacity=".6">
+      <circle cx="80" cy="25" r="4" fill="#00d4ff"/>
+      <circle cx="60" cy="45" r="3" fill="#0066ff"/>
+      <circle cx="100" cy="45" r="3" fill="#0066ff"/>
+      <circle cx="45" cy="65" r="2.5" fill="#00d4ff" opacity=".5"/>
+      <circle cx="80" cy="65" r="3" fill="#00d4ff"/>
+      <circle cx="115" cy="65" r="2.5" fill="#00d4ff" opacity=".5"/>
+      <circle cx="60" cy="85" r="3" fill="#0066ff"/>
+      <circle cx="100" cy="85" r="3" fill="#0066ff"/>
+      <circle cx="80" cy="105" r="4" fill="#00d4ff"/>
+      
+      <g stroke="#00d4ff" stroke-width=".5" opacity=".4">
+        <line x1="80" y1="25" x2="60" y2="45"/>
+        <line x1="80" y1="25" x2="100" y2="45"/>
+        <line x1="60" y1="45" x2="45" y2="65"/>
+        <line x1="60" y1="45" x2="80" y2="65"/>
+        <line x1="100" y1="45" x2="80" y2="65"/>
+        <line x1="100" y1="45" x2="115" y2="65"/>
+        <line x1="45" y1="65" x2="60" y2="85"/>
+        <line x1="80" y1="65" x2="60" y2="85"/>
+        <line x1="80" y1="65" x2="100" y2="85"/>
+        <line x1="115" y1="65" x2="100" y2="85"/>
+        <line x1="60" y1="85" x2="80" y2="105"/>
+        <line x1="100" y1="85" x2="80" y2="105"/>
+      </g>
+    </g>
+    
+    <text x="80" y="125" text-anchor="middle" font-size="9" fill="#00d4ff" font-family="monospace" font-weight="600">AI MODEL</text>
+  </g>
+
+  <!-- Arrow to output -->
+  <g>
+    <line x1="460" y1="160" x2="500" y2="160" stroke="url(#gp)" stroke-width="2" stroke-dasharray="4,3">
+      <animate attributeName="stroke-dashoffset" values="0;-14" dur="1s" begin=".5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Output section -->
+  <g transform="translate(510,100)">
+    <rect x="0" y="0" width="150" height="130" rx="10" fill="var(--card)" stroke="#0066ff" stroke-width="1.5"/>
+    
+    <!-- Generated content -->
+    <rect x="10" y="10" width="130" height="50" rx="6" fill="var(--bg)" stroke="var(--border)" stroke-width=".5"/>
+    <text x="20" y="28" font-size="8" fill="#9494b0" font-family="monospace">"A majestic mountain...</text>
+    <text x="20" y="40" font-size="8" fill="#9494b0" font-family="monospace">at golden hour with</text>
+    <text x="20" y="52" font-size="8" fill="#9494b0" font-family="monospace">clouds and lake..."</text>
+    
+    <!-- Image icon -->
+    <rect x="10" y="68" width="30" height="30" rx="4" fill="url(#gp)" opacity=".3"/>
+    <circle cx="25" cy="80" r="5" fill="none" stroke="#00d4ff" stroke-width="1"/>
+    <path d="M12,90 L22,78 L30,88 L40,80" stroke="#00d4ff" stroke-width="1" fill="none"/>
+    
+    <text x="50" y="85" font-size="9" fill="#9494b0" font-family="monospace">+ Generated</text>
+    <text x="50" y="97" font-size="9" fill="#9494b0" font-family="monospace">Response</text>
+  </g>
+
+  <!-- Processing rings animation -->
+  <g transform="translate(380,160)">
+    <circle cx="0" cy="0" r="15" stroke="#00d4ff" stroke-width="1" fill="none" opacity=".3">
+      <animate attributeName="r" values="10;25" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".4;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Model labels -->
+  <text x="100" y="80" text-anchor="middle" font-size="14" fill="#00d4ff" font-family="monospace" font-weight="bold" opacity=".6">MIDJOURNEY</text>
+  <text x="130" y="220" text-anchor="middle" font-size="14" fill="#0066ff" font-family="monospace" font-weight="bold" opacity=".4">CHATGPT</text>
+  <text x="570" y="250" text-anchor="middle" font-size="14" fill="#00d4ff" font-family="monospace" font-weight="bold" opacity=".4">CLAUDE</text>
+
+  <!-- Bottom pipeline bar -->
+  <g transform="translate(50,280)">
+    <rect x="0" y="0" width="600" height="3" rx="1.5" fill="url(#gbg)"/>
+    <circle cx="80" cy="1.5" r="5" fill="#00d4ff" opacity=".6">
+      <animate attributeName="cx" values="50;590" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
