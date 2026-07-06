@@ -382,13 +382,13 @@ window.addEventListener('scroll', () => {
 const cnt = new IntersectionObserver(e => {
   e.forEach(e => {
     if (e.isIntersecting) {
-      let t = parseInt(e.target.dataset.c), n = e.target;
-      (function e(t) {
-        let i = performance.now(), o = Math.min((t - i) / 2000, 1);
-        n.textContent = Math.floor(o * parseInt(n.dataset.c)).toLocaleString('ru');
-        o < 1 && requestAnimationFrame(e);
-        if (o >= 1) n.textContent = parseInt(n.dataset.c).toLocaleString('ru');
-      })();
+      let target = parseInt(e.target.dataset.c), n = e.target, start = performance.now();
+      (function tick(now) {
+        let o = Math.min((now - start) / 2000, 1);
+        n.textContent = Math.floor(o * target).toLocaleString('ru');
+        if (o < 1) requestAnimationFrame(tick);
+        else n.textContent = target.toLocaleString('ru');
+      })(start);
       cnt.unobserve(n);
     }
   });
