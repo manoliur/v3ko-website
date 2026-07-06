@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V3Ko — AI-продукты и автоматизации</title>
-  <meta name="description" content="V3Ko — платформа AI-продуктов. 9 580 готовых n8n шаблонов, ежедневные промпты для нейросетей, голосовой AI-ассистент. Продукты с AI-поддержкой.">
-  <meta name="keywords" content="n8n шаблоны, AI автоматизация, промпты, Telegram боты">
+  <meta name="description" content="V3Ko — платформа AI-продуктов. 9 580 готовых n8n шаблонов, ежедневные промпты для нейросетей, голосовой AI-ассистент и AI-редакция. Оплата звёздами Telegram.">
+  <meta name="keywords" content="n8n шаблоны, AI автоматизация, промпты, Telegram боты, Midjourney, ChatGPT">
   <meta property="og:title" content="V3Ko — AI-продукты и автоматизации">
   <meta property="og:description" content="9 580 n8n шаблонов, ежедневные промпты, голосовой AI-ассистент. Продукты с AI-поддержкой.">
   <meta property="og:url" content="https://v3ko.ru">
@@ -15,151 +15,543 @@
   <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
   <link rel="shortcut icon" href="/public/favicon.ico">
   <link rel="stylesheet" href="/src/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "V3Ko",
+    "url": "https://v3ko.ru",
+    "description": "Платформа AI-продуктов и автоматизаций",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://t.me/Rob46_bot",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Product",
+        "position": 1,
+        "name": "N8N Каталог",
+        "description": "9 580 готовых шаблонов автоматизации",
+        "offers": { "@type": "Offer", "price": "100", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "Product",
+        "position": 2,
+        "name": "Промпты дня",
+        "description": "246+ промптов для Midjourney, ChatGPT, Claude",
+        "offers": { "@type": "Offer", "price": "50", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "Product",
+        "position": 3,
+        "name": "Voice Assistant",
+        "description": "Голосовой AI-ассистент на русском",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <a href="/" class="logo">V<span>3</span>Ko</a>
-      <nav>
-        <a href="/prompts/">Промпты</a>
-        <a href="/n8n/">N8N</a>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">V<span class="logo-accent">3</span>Ko</a>
+      <div class="nav-links">
+        <a href="#products">Продукты</a>
+        <a href="#features">Почему V3Ko</a>
+        <a href="#faq">FAQ</a>
         <a href="https://t.me/ai_vmasterke">Канал</a>
-        <a href="https://t.me/vmasterke">Форум</a>
-        <a href="https://t.me/Rob46_bot" class="nav-cta">🚀 Бот</a>
-      </nav>
+        <a href="https://t.me/Rob46_bot" class="nav-cta">Начать</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="gradient-text">AI-продукты,<br>которые работают</h1>
-        <p class="subtitle">Готовые решения с AI-поддержкой. Без сложных настроек, без подписок на API. Оплата звёздами Telegram.</p>
-        <div class="hero-links">
-          <a href="https://t.me/ai_vmasterke">📢 Канал</a>
-          <a href="https://t.me/vmasterke">💬 Форум</a>
-          <a href="https://github.com/manoliur">💻 GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="stat-card"><div class="num">9 580</div><div class="label">n8n шаблонов</div></div>
-      <div class="stat-card"><div class="num">246+</div><div class="label">промптов</div></div>
-      <div class="stat-card"><div class="num">3</div><div class="label">AI-продукта</div></div>
-    </section>
-
-    <section class="products">
-      <div class="container">
-        <div class="section-title">
-          <h2>Продукты</h2>
-          <p>Каждый продукт решает конкретную задачу через AI</p>
-        </div>
-
-        <div class="product-grid">
-          <a class="product-card" href="/n8n/">
-            <span class="icon">🔧</span>
-            <h3>N8N Каталог</h3>
-            <p>9 580 готовых шаблонов автоматизации. 12 категорий: AI, Email, CRM, Telegram, Маркетинг. JSON для импорта.</p>
-            <div class="tags">
-              <span class="tag">n8n</span>
-              <span class="tag">автоматизация</span>
-              <span class="tag">no-code</span>
-            </div>
-            <div class="price">⭐ 100 / мес</div>
-          </a>
-
-          <a class="product-card" href="/prompts/">
-            <span class="icon">📝</span>
-            <h3>Промпты дня</h3>
-            <p>Ежедневные промпты для Midjourney, ChatGPT, Claude, Stable Diffusion. Архив 246+. Обновление каждый день.</p>
-            <div class="tags">
-              <span class="tag">midjourney</span>
-              <span class="tag">chatgpt</span>
-              <span class="tag">промпты</span>
-            </div>
-            <div class="price">⭐ 50 / мес</div>
-          </a>
-
-          <a class="product-card" href="https://t.me/Rob46_bot">
-            <span class="icon">🤖</span>
-            <h3>@Rob46_bot</h3>
-            <p>Telegram-бот с каталогом n8n шаблонов и подпиской на промпты. Поиск, категории, скачивание JSON.</p>
-            <div class="tags">
-              <span class="tag">telegram</span>
-              <span class="tag">бот</span>
-              <span class="tag">каталог</span>
-            </div>
-            <div class="price">⭐ 100 / мес</div>
-          </a>
-
-          <a class="product-card" href="https://t.me/VoiceV3k_bot">
-            <span class="icon">🎙</span>
-            <h3>@VoiceV3k_bot</h3>
-            <p>Голосовой AI-ассистент на русском. Говори голосом или текстом — отвечает голосом. Whisper + DeepSeek + Fish Audio.</p>
-            <div class="tags">
-              <span class="tag">ai</span>
-              <span class="tag">голос</span>
-              <span class="tag">tts</span>
-            </div>
-            <div class="price">Бесплатно</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <div class="section-title">
-          <h2>Почему V3Ko</h2>
-        </div>
-        <div class="feature-grid">
-          <div class="feature-item">
-            <div class="icon">⚡</div>
-            <h4>Работает сразу</h4>
-            <p>Не нужно настраивать API, ставить сервера, разбираться в документации</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">💎</div>
-            <h4>Оплата звёздами</h4>
-            <p>Никаких карт и регистраций. Платишь звёздами Telegram — получаешь доступ</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">🔧</div>
-            <h4>Готовые шаблоны</h4>
-            <p>9 580 n8n workflow для любой задачи. Импорт в один клик</p>
-          </div>
-          <div class="feature-item">
-            <div class="icon">🔄</div>
-            <h4>Ежедневное обновление</h4>
-            <p>Новые промпты каждое утро. Шаблоны пополняются автоматически</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <div class="cta-block">
-        <h3>🔥 Начни с любого продукта</h3>
-        <p>Открой каталог n8n шаблонов или подпишись на ежедневные промпты</p>
-        <a class="cta-btn" href="https://t.me/Rob46_bot">🚀 Открыть @Rob46_bot</a>
-        <div class="cta-meta">⭐ n8n: 100 · Промпты: 50 · Комбо: 150</div>
-        <div class="cta-note">🔓 3 шаблона в каждой категории — бесплатно</div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
       </div>
     </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="links">
-        <a href="/prompts/">Промпты</a>
-        <a href="/n8n/">N8N</a>
-        <a href="https://t.me/ai_vmasterke">Канал</a>
-        <a href="https://t.me/vmasterke">Форум</a>
-        <a href="https://github.com/manoliur">GitHub</a>
+    <div class="hero-content">
+      <div class="hero-badge">AI-экосистема</div>
+      <h1 class="hero-title">
+        AI-продукты,<br>
+        <span class="gradient-text">которые работают</span>
+      </h1>
+      <p class="hero-subtitle">
+        Готовые решения с AI-поддержкой. Без сложных настроек,<br>
+        без подписок на API. Оплата звёздами Telegram.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">
+          Смотреть продукты
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m0 0l4-4m-4 4l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://t.me/ai_vmasterke" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram канал
+        </a>
       </div>
-      <div class="copyright">© 2026 V3Ko</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="9580">0</span>
+          <span class="hero-stat-label">n8n шаблонов</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="246">0</span>
+          <span class="hero-stat-label">промптов</span>
+          <span class="hero-stat-plus">+</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num" data-count="4">0</span>
+          <span class="hero-stat-label">AI-продукта</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Продукты</span>
+        <h2 class="section-title">Всё, что нужно для<br><span class="gradient-text">работы с AI</span></h2>
+        <p class="section-desc">Каждый продукт решает конкретную задачу через искусственный интеллект</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Card 1: N8N Каталог -->
+        <div class="product-card reveal" data-delay="0">
+          <div class="card-glow"></div>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon-wrap">
+              <span class="card-icon">🔧</span>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag">n8n</span>
+              <span class="card-tag">автоматизация</span>
+              <span class="card-tag">no-code</span>
+            </div>
+            <h3 class="card-title">N8N Каталог</h3>
+            <p class="card-desc">9 580 готовых шаблонов автоматизации. 12 категорий: AI, Email, CRM, Telegram, Маркетинг. JSON для импорта.</p>
+            <div class="card-footer">
+              <span class="card-price">⭐ 100 / мес</span>
+              <a href="https://t.me/Rob46_bot" class="card-btn" target="_blank">Открыть в Telegram →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Промпты дня -->
+        <div class="product-card reveal" data-delay="1">
+          <div class="card-glow"></div>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon-wrap">
+              <span class="card-icon">📝</span>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag">midjourney</span>
+              <span class="card-tag">chatgpt</span>
+              <span class="card-tag">промпты</span>
+            </div>
+            <h3 class="card-title">Промпты дня</h3>
+            <p class="card-desc">Ежедневные промпты для Midjourney, ChatGPT, Claude, Stable Diffusion. Архив 246+. Обновление каждый день.</p>
+            <div class="card-footer">
+              <span class="card-price">⭐ 50 / мес</span>
+              <a href="https://t.me/Rob46_bot" class="card-btn" target="_blank">Открыть в Telegram →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Voice Assistant -->
+        <div class="product-card reveal" data-delay="2">
+          <div class="card-glow"></div>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon-wrap">
+              <span class="card-icon">🎙</span>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag">ai</span>
+              <span class="card-tag">голос</span>
+              <span class="card-tag">tts</span>
+            </div>
+            <h3 class="card-title">Voice Assistant</h3>
+            <p class="card-desc">Голосовой AI-ассистент на русском. Говори голосом или текстом — отвечает голосом. Whisper + DeepSeek + Fish Audio.</p>
+            <div class="card-footer">
+              <span class="card-price card-price-free">Бесплатно</span>
+              <a href="https://t.me/VoiceV3k_bot" class="card-btn" target="_blank">Начать пользоваться →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: AI-редакция -->
+        <div class="product-card reveal coming-soon" data-delay="3">
+          <div class="card-glow"></div>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon-wrap">
+              <span class="card-icon">🤖</span>
+            </div>
+            <div class="card-tags">
+              <span class="card-tag">ai</span>
+              <span class="card-tag">контент</span>
+              <span class="card-tag">скоро</span>
+            </div>
+            <h3 class="card-title">AI-редакция</h3>
+            <p class="card-desc">Автоматическая редакция контента с AI. Умные рерайты, генерация текстов, проверка орфографии, SEO-оптимизация.</p>
+            <div class="card-footer">
+              <span class="card-badge-coming">В разработке</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS COUNTER ===== -->
+  <section class="stats-bar reveal">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number gradient-text">9 580</span>
+          <span class="stat-desc">n8n шаблонов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">246+</span>
+          <span class="stat-desc">промптов в архиве</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">4</span>
+          <span class="stat-desc">AI-продукта</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number gradient-text">100%</span>
+          <span class="stat-desc">Telegram Stars</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Преимущества</span>
+        <h2 class="section-title">Почему <span class="gradient-text">V3Ko</span></h2>
+        <p class="section-desc">Мы сделали AI-продукты доступными — без боли и сложных настроек</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal" data-delay="0">
+          <div class="feature-icon feature-icon-lightning">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h4 class="feature-title">Работает сразу</h4>
+          <p class="feature-desc">Не нужно настраивать API, ставить сервера, разбираться в документации. Просто открой бота и пользуйся.</p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="1">
+          <div class="feature-icon feature-icon-star">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h4 class="feature-title">Оплата звёздами</h4>
+          <p class="feature-desc">Никаких карт и регистраций. Платишь звёздами Telegram — получаешь доступ к полному каталогу.</p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="2">
+          <div class="feature-icon feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h4 class="feature-title">Готовые шаблоны</h4>
+          <p class="feature-desc">9 580 n8n workflow для любой задачи. Импорт в один клик. 3 шаблона в каждой категории — бесплатно.</p>
+        </div>
+
+        <div class="feature-card reveal" data-delay="3">
+          <div class="feature-icon feature-icon-refresh">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+          </div>
+          <h4 class="feature-title">Ежедневное обновление</h4>
+          <p class="feature-desc">Новые промпты каждое утро. Шаблоны пополняются автоматически. Ты всегда получаешь актуальные решения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-glow"></div>
+        <div class="cta-content">
+          <h2 class="cta-title">🔥 Начни с любого продукта</h2>
+          <p class="cta-desc">Открой каталог n8n шаблонов или подпишись на ежедневные промпты. 3 шаблона в каждой категории — бесплатно.</p>
+          <div class="cta-pricing">
+            <span>⭐ n8n: 100 / мес</span>
+            <span class="cta-dot">·</span>
+            <span>⭐ Промпты: 50 / мес</span>
+            <span class="cta-dot">·</span>
+            <span>⭐ Комбо: 150 / мес</span>
+          </div>
+          <div class="cta-actions">
+            <a href="https://t.me/Rob46_bot" class="btn btn-primary btn-large" target="_blank">
+              Открыть каталог
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://t.me/VoiceV3k_bot" class="btn btn-secondary btn-large" target="_blank">
+              Попробовать Voice
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Часто задаваемые<br><span class="gradient-text">вопросы</span></h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Что такое V3Ko?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>V3Ko — это платформа AI-продуктов. Мы создаём готовые решения: n8n шаблоны для автоматизации, ежедневные промпты для нейросетей, голосового AI-ассистента и AI-редакцию контента. Все продукты работают через Telegram.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Как получить доступ к продуктам?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Откройте бота <a href="https://t.me/Rob46_bot" target="_blank">@Rob46_bot</a> в Telegram. Там доступны каталог n8n шаблонов и подписка на промпты. Voice Assistant доступен через <a href="https://t.me/VoiceV3k_bot" target="_blank">@VoiceV3k_bot</a> — бесплатно и без подписки.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Что такое n8n?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>n8n — это open-source альтернатива Zapier и Make. Позволяет соединять сервисы без программирования. Бесплатно для самостоятельного использования. Наши шаблоны — готовые workflow, которые можно импортировать в свой n8n.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Как использовать шаблоны n8n?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>1. Откройте <a href="https://t.me/Rob46_bot" target="_blank">@Rob46_bot</a><br>
+            2. Выберите категорию и шаблон<br>
+            3. Скачайте JSON-файл<br>
+            4. Импортируйте в n8n: Workflows → Import from File<br>
+            Готово! Workflow работает.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Есть ли бесплатный доступ?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>Да! В каждой категории n8n шаблонов — 3 бесплатных sample. Voice Assistant — полностью бесплатен. Промпты: первые 20 примеров бесплатно, полный архив 246+ — по подписке ⭐ 50/мес.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">Как оплатить подписку звёздами?</span>
+            <span class="faq-chevron">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>В боте <a href="https://t.me/Rob46_bot" target="_blank">@Rob46_bot</a> выберите тариф → оплата через Telegram Stars. Звёзды можно купить внутри Telegram или через @PremiumBot. После оплаты доступ открывается мгновенно.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">V<span class="logo-accent">3</span>Ko</a>
+          <p class="footer-desc">AI-продукты и автоматизации для Telegram</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Продукты</h5>
+            <a href="https://t.me/Rob46_bot">N8N Каталог</a>
+            <a href="https://t.me/Rob46_bot">Промпты дня</a>
+            <a href="https://t.me/VoiceV3k_bot">Voice Assistant</a>
+            <a href="#">AI-редакция</a>
+          </div>
+          <div class="footer-col">
+            <h5>Сообщество</h5>
+            <a href="https://t.me/ai_vmasterke" target="_blank">Telegram Канал</a>
+            <a href="https://t.me/vmasterke" target="_blank">Telegram Форум</a>
+            <a href="https://github.com/manoliur" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 V3Ko. Все права защищены.</span>
+        <span class="footer-made">Сделано с ❤️ для AI-сообщества</span>
+      </div>
     </div>
   </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+      this.classList.toggle('active');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+        document.getElementById('navToggle').classList.remove('active');
+      });
+    });
+
+    // Scroll reveal with Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.delay) || 0;
+          entry.target.style.transitionDelay = (delay * 0.15) + 's';
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Navbar background on scroll
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Animated number counter
+    const statNumbers = document.querySelectorAll('.hero-stat-num');
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          animateNumber(el, target);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(el => statObserver.observe(el));
+
+    function animateNumber(el, target) {
+      let current = 0;
+      const duration = 2000;
+      const step = Math.max(1, Math.floor(target / 60));
+      const startTime = performance.now();
+
+      function update(timestamp) {
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        current = Math.floor(progress * target);
+        el.textContent = current.toLocaleString('ru');
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target.toLocaleString('ru');
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // FAQ accordion smooth toggle
+    document.querySelectorAll('.faq-item summary').forEach(summary => {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const wasOpen = details.open;
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== details) item.removeAttribute('open');
+        });
+
+        // Toggle current
+        details.open = !wasOpen;
+        e.preventDefault();
+      });
+    });
+  </script>
 </body>
 </html>

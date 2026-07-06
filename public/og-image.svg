@@ -8,48 +8,41 @@
       <stop offset="0%" stop-color="#00c853"/>
       <stop offset="100%" stop-color="#00bcd4"/>
     </linearGradient>
-    <linearGradient id="line1" x1="0" y1="0" x2="500" y2="0">
+    <linearGradient id="subtle" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00c853" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00c853" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#00c853" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#00c853" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="line2" x1="0" y1="0" x2="500" y2="0">
-      <stop offset="0%" stop-color="#00bcd4" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00bcd4" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#00bcd4" stop-opacity="0"/>
     </linearGradient>
   </defs>
   <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- Grid lines -->
-  <g opacity="0.05">
-    <line x1="0" y1="105" x2="1200" y2="105" stroke="#fff"/>
-    <line x1="0" y1="210" x2="1200" y2="210" stroke="#fff"/>
-    <line x1="0" y1="315" x2="1200" y2="315" stroke="#fff"/>
-    <line x1="0" y1="420" x2="1200" y2="420" stroke="#fff"/>
-    <line x1="0" y1="525" x2="1200" y2="525" stroke="#fff"/>
-    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff"/>
-    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff"/>
-    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff"/>
-    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff"/>
-    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff"/>
+  <!-- Grid -->
+  <g opacity="0.04">
+    <line x1="0" y1="105" x2="1200" y2="105" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="210" x2="1200" y2="210" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="420" x2="1200" y2="420" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="525" x2="1200" y2="525" stroke="#fff" stroke-width="0.5"/>
+    <line x1="240" y1="0" x2="240" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="480" y1="0" x2="480" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="720" y1="0" x2="720" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="960" y1="0" x2="960" y2="630" stroke="#fff" stroke-width="0.5"/>
   </g>
-  <!-- Glow line 1 -->
-  <rect x="350" y="240" width="500" height="2" fill="url(#line1)"/>
-  <!-- Main text -->
-  <text x="600" y="290" text-anchor="middle" font-family="Arial,sans-serif" font-size="120" font-weight="900" fill="url(#txt">V3Ko</text>
-  <!-- Glow line 2 -->
-  <rect x="350" y="310" width="500" height="2" fill="url(#line2)"/>
+  <!-- Accent line -->
+  <rect x="350" y="270" width="500" height="2" fill="url(#subtle)"/>
+  <rect x="350" y="345" width="500" height="2" fill="url(#subtle)"/>
+  <!-- Main Logo -->
+  <text x="600" y="320" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="130" font-weight="900" fill="url(#txt)" letter-spacing="-4">V3Ko</text>
   <!-- Subtitle -->
-  <text x="600" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" fill="#888">AI-продукты и автоматизации</text>
+  <text x="600" y="400" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="30" fill="#8888a0" font-weight="500" letter-spacing="-0.5">AI-продукты и автоматизации</text>
   <!-- Stats -->
-  <g transform="translate(600,440)">
-    <text x="-180" y="0" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#555">9 580 n8n шаблонов</text>
-    <text x="0" y="0" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#555">246+ промптов</text>
-    <text x="180" y="0" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#555">3 AI-продукта</text>
+  <g transform="translate(600,460)">
+    <text x="-200" y="0" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#555570">9 580 n8n шаблонов</text>
+    <text x="0" y="0" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#555570">246+ промптов</text>
+    <text x="200" y="0" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#555570">4 AI-продукта</text>
   </g>
-  <!-- Stars -->
-  <text x="600" y="510" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#ffd700">Оплата звёздами Telegram</text>
-  <!-- Bottom accent -->
+  <!-- Telegram Stars -->
+  <text x="600" y="520" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="18" fill="#ffd700">Оплата звёздами Telegram</text>
+  <!-- Bottom glow line -->
   <rect x="0" y="627" width="1200" height="3" fill="url(#txt)"/>
 </svg>
