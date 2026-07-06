@@ -475,6 +475,16 @@ img { max-width: 100%; }
 .blog-card h3 a:hover { color: var(--coral-d); }
 .b-excerpt { color: var(--ink2); font-size: .92rem; margin-bottom: 1rem; }
 .b-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; font-size: .8rem; color: var(--ink3); }
+.b-read {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--coral-d);
+  font-size: .9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: gap var(--t), opacity var(--t);
+}
+.b-read:hover { opacity: .75; }
 .tag {
   padding: .2rem .6rem;
   background: rgba(46,42,50,.05);
