@@ -29,6 +29,16 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/110451940" style="position:absolute;left:-9999px" alt=""></div></noscript>
   <!-- /Yandex.Metrika counter -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Нужен ли свой сервер для n8n?","acceptedAnswer":{"@type":"Answer","text":"Да, для использования n8n шаблонов нужен собственный инстанс n8n (self-hosted или облачный n8n.cloud). Базовая установка на VPS занимает 5 минут через Docker. На нашем гайде по n8n есть пошаговая инструкция по установке. После установки просто импортируй любой шаблон из нашего каталога."}},
+      {"@type":"Question","name":"Как импортировать шаблон?","acceptedAnswer":{"@type":"Answer","text":"В боте нажми «Скопировать JSON» → в своём n8n открой Workflows → Import from Clipboard. Всё. Шаблон готов к использованию."}},
+      {"@type":"Question","name":"Какие API ключи нужны?","acceptedAnswer":{"@type":"Answer","text":"Зависит от шаблона. Для AI-шаблонов нужен API ключ OpenAI/Claude. Для Telegram — токен бота. Для Gmail — OAuth. В каждом шаблоне указаны необходимые credentials."}},
+      {"@type":"Question","name":"Сколько стоит подписка?","acceptedAnswer":{"@type":"Answer","text":"100 ⭐ в месяц. В каждой категории — 3 бесплатных шаблона для теста. Подробнее на странице Цены и тарифы."}}
+    ]
+  }</script>
 </head>
 <body>
 
@@ -51,7 +61,7 @@
 
 <!-- ====== PAGE HEADER (full background image) ====== -->
 <section class="page-header">
-  <div class="page-header-bg" style="background-image:url('public/hero-n8n.jpg')"></div>
+  <div class="page-header-bg" role="img" aria-label="N8N шаблоны для автоматизации workflow" style="background-image:url('public/hero-n8n.jpg')"></div>
   <div class="page-header-overlay"></div>
   <div class="hero-bg-grid"></div>
   <div class="h-c">
