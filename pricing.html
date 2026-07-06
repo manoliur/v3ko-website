@@ -54,22 +54,17 @@
   </div>
 </nav>
 
-<!-- ====== PAGE HEADER ====== -->
+<!-- ====== PAGE HEADER (full background) ====== -->
 <section class="page-header">
-  <div class="h-bg"><div class="h-bg-img"></div><div class="h-grid"></div><div class="h-orbs"><div class="orb orb-1" style="width:300px;height:300px;opacity:.15"></div></div></div>
+  <div class="page-header-bg" style="background-image:url('public/hero-main.jpg')"></div>
+  <div class="page-header-overlay"></div>
+  <div class="hero-bg-grid"></div>
   <div class="h-c">
     <div class="page-breadcrumb">
       <a href="/">Главная</a><span class="sep">/</span><span>Цены</span>
     </div>
     <h1><span class="gradient-text">Цены</span> и тарифы</h1>
     <p>Выбери подходящий тариф. Оплата звёздами Telegram — без карт и подписок.</p>
-  </div>
-</section>
-
-<!-- ====== SVG ILLUSTRATION ====== -->
-<section style="padding:0 0 3rem">
-  <div class="container reveal" style="text-align:center">
-    <object type="image/svg+xml" data="public/pricing-illustration.svg" aria-label="Тарифы V3Ko" style="max-width:100%;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--border)">Тарифы</object>
   </div>
 </section>
 
@@ -126,17 +121,15 @@
       </div>
     </div>
 
-    <!-- Free products -->
-    <div class="reveal" style="text-align:center;margin-bottom:2rem">
-      <img src="public/hero-voice.jpg" alt="Голосовой AI-ассистент" class="illustration-contained">
-    </div>
-    <div class="reveal" style="margin-top:2rem">
-      <div class="sh">
+    <!-- Free products with voice illustration -->
+    <div class="voice-section-deco reveal" style="margin-top:2rem">
+      <div class="sh" style="margin-bottom:2.5rem">
         <span class="sl">Бесплатно</span>
         <h2 class="st">Что можно получить <span class="gradient-text">бесплатно</span></h2>
       </div>
       <div class="prod-grid">
         <div class="prod-card reveal">
+          <div class="prod-card-voice-deco"><img src="public/hero-voice.jpg" alt="" loading="lazy"></div>
           <div class="icon-svg"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 6C12.268 6 6 12.268 6 20s6.268 14 14 14 14-6.268 14-14S27.732 6 20 6z" stroke="#00d4ff" stroke-width="2" fill="none"/><path d="M16 24s2 3 4 3 4-3 4-3" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="18" r="1.5" fill="#00d4ff"/><circle cx="24" cy="18" r="1.5" fill="#00d4ff"/></svg></div>
           <h3>Voice Assistant</h3>
           <p>Голосовой AI-ассистент в Telegram. Распознаёт речь, отвечает голосом. Полностью бесплатно.</p>

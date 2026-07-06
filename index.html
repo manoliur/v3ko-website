@@ -50,19 +50,16 @@
   </div>
 </nav>
 
-<!-- ====== HERO ====== -->
+<!-- ====== HERO (full background image) ====== -->
 <section class="hero">
-  <div class="h-bg">
-    <div class="h-bg-img"></div><div class="h-grid"></div>
-    <div class="h-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="hero-illustration">
-      <img src="public/hero-main.jpg" alt="AI автоматизация">
-    </div>
-  </div>
-  <div class="h-c">
-    <div class="h-badge">AI-экосистема</div>
-    <h1 class="h-t">AI-продукты, <span class="gradient-text">которые работают</span></h1>
-    <p class="h-s">Готовые решения с AI-поддержкой. Без сложных настроек и подписок на API. Оплата звёздами Telegram.</p>
+  <div class="hero-bg-image" id="heroBg" style="background-image:url('public/hero-main.jpg')"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+  <div class="hero-c">
+    <div class="hero-badge">AI-экосистема</div>
+    <h1 class="hero-t">AI-продукты, <span class="gradient-text">которые работают</span></h1>
+    <p class="hero-s">Готовые решения с AI-поддержкой. Без сложных настроек и подписок на API. Оплата звёздами Telegram.</p>
     <div class="h-a">
       <a href="n8n.html" class="btn btn-p">Смотреть каталог ↓</a>
       <a href="https://t.me/ai_vmasterke" class="btn btn-s">Telegram канал</a>
@@ -90,6 +87,7 @@
         <p>9 580 готовых workflow для автоматизации бизнеса. Бери и импортируй в свой n8n.</p>
         <div class="price">100 <span style="font-size:.85rem;color:#ffd700">⭐</span><span class="price-sub"> / мес</span></div>
         <a href="n8n.html" class="btn btn-p btn-sm">Подробнее →</a>
+        <div class="prod-card-illustration"><img src="public/hero-n8n.jpg" alt="" loading="lazy"></div>
       </div>
       <div class="prod-card reveal">
         <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#0066ff" stroke-width="2" fill="none"/><path d="M24 14v10l8 4" stroke="#0066ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="4" fill="#00d4ff" opacity=".3"/></svg></div>
@@ -97,6 +95,7 @@
         <p>Ежедневные промпты для Midjourney, ChatGPT, Claude и Stable Diffusion. 20 бесплатно.</p>
         <div class="price">50 <span style="font-size:.85rem;color:#ffd700">⭐</span><span class="price-sub"> / мес</span></div>
         <a href="prompts.html" class="btn btn-p btn-sm">Подробнее →</a>
+        <div class="prod-card-illustration"><img src="public/hero-prompts.jpg" alt="" loading="lazy"></div>
       </div>
       <div class="prod-card reveal">
         <div class="icon-svg"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 6C14.06 6 6 14.06 6 24s8.06 18 18 18 18-8.06 18-18S33.94 6 24 6z" stroke="#c882ff" stroke-width="2" fill="none"/><path d="M18 28s2 4 6 4 6-4 6-4" stroke="#c882ff" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="20" r="2" fill="#c882ff"/><circle cx="30" cy="20" r="2" fill="#c882ff"/></svg></div>
@@ -106,6 +105,7 @@
         <a href="https://t.me/ai_vmasterke" class="btn btn-s btn-sm">Перейти →</a>
       </div>
       <div class="prod-card reveal">
+        <div class="prod-card-voice-deco"><img src="public/hero-voice.jpg" alt="" loading="lazy"></div>
         <h3>Voice Assistant</h3>
         <p>Голосовой AI-ассистент в Telegram. Распознаёт речь, отвечает голосом. Работает на ChatGPT.</p>
         <div class="price">Бесплатно</div>
@@ -204,7 +204,7 @@
       <p class="sd">Гайды по автоматизации, промптам и AI-инструментам</p>
     </div>
     <div class="blog-grid">
-      <div class="blog-card reveal">
+      <div class="blog-card reveal" style="--blog-img:url('../public/blog-n8n.jpg')">
         <div class="b-cat">Автоматизация</div>
         <h3><a href="blog/n8n-avtomatizacia-biznesa.html">N8N для автоматизации бизнеса: полный гайд 2026</a></h3>
         <div class="b-excerpt">Как настроить n8n с нуля, лучшие шаблоны для email, Telegram, CRM и AI. Примеры workflow для малого бизнеса.</div>
@@ -214,7 +214,7 @@
           <span class="tag">автоматизация</span>
         </div>
       </div>
-      <div class="blog-card reveal">
+      <div class="blog-card reveal" style="--blog-img:url('../public/blog-prompts.jpg')">
         <div class="b-cat">Промпты</div>
         <h3><a href="blog/prompty-dlya-neyrosetey.html">Промпты для нейросетей: как писать эффективные запросы</a></h3>
         <div class="b-excerpt">Лучшие техники составления промптов для ChatGPT, Midjourney, Claude. Примеры и шаблоны для любых задач.</div>
@@ -331,6 +331,11 @@ document.querySelectorAll('.reveal').forEach(e => rv.observe(e));
 // Navbar scroll
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50);
+  // Параллакс hero
+  const heroBg = document.getElementById('heroBg');
+  if (heroBg && window.pageYOffset < window.innerHeight) {
+    heroBg.style.transform = `scale(1.05) translateY(${window.pageYOffset * 0.05}px)`;
+  }
 });
 
 // Counter animation
