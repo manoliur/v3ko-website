@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#0d0d1a"/>
     </linearGradient>
     <linearGradient id="txt" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00c853"/>
-      <stop offset="100%" stop-color="#00bcd4"/>
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
     </linearGradient>
     <linearGradient id="subtle" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00c853" stop-opacity="0"/>
