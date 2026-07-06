@@ -102,6 +102,7 @@ a:hover { color: var(--cyan); }
   padding: 8rem 1.5rem 4rem; position: relative; overflow: hidden;
 }
 .h-bg { position: absolute; inset: 0; overflow: hidden; }
+.h-bg-img { position: absolute; inset: 0; background: url('../public/bg-abstract.jpg') center/cover no-repeat; opacity: 0.15; pointer-events: none; }
 .h-grid {
   position: absolute; inset: 0;
   background-image:
