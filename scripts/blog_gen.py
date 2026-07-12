@@ -288,7 +288,6 @@ TEMPLATE = """<!DOCTYPE html>
           <h5>Сообщество</h5>
           <a href="https://t.me/ai_vmasterke">Telegram Канал</a>
           <a href="https://t.me/vmasterke">Telegram Форум</a>
-          <a href="https://github.com/manoliur">GitHub</a>
         </div>
       </div>
     </div>
