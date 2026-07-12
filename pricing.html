@@ -41,7 +41,7 @@
       {"@type":"Question","name":"Можно ли оплатить картой?","acceptedAnswer":{"@type":"Answer","text":"Мы принимаем только Telegram Stars. Это безопаснее и проще: не нужно вводить данные карты. Stars можно купить внутри Telegram любой картой или через Apple Pay / Google Pay."}},
       {"@type":"Question","name":"Как отменить подписку?","acceptedAnswer":{"@type":"Answer","text":"Подписка действует 30 дней с момента оплаты. Автопродления нет — платишь каждый месяц вручную. Можно не продлевать в любой момент."}},
       {"@type":"Question","name":"Есть ли бесплатный пробный период?","acceptedAnswer":{"@type":"Answer","text":"Да. 3 бесплатных шаблона в каждой категории n8n. Все промпты бесплатны на prompts.v3ko.ru. Voice Assistant — полностью бесплатный без ограничений."}},
-      {"@type":"Question","name":"Можно ли перейти с тарифа на другой?","acceptedAnswer":{"@type":"Answer","text":"Да. Если у тебя n8n и ты хочешь комбо — просто оплати комбо в следующий раз. Остаток старого тарифа не сгорает."}}
+      {"@type":"Question","name":"Что входит в подписку n8n?","acceptedAnswer":{"@type":"Answer","text":"Полный доступ ко всем 12 категориям каталога n8n шаблонов на 30 дней: поиск, импорт JSON в один клик и еженедельные обновления базы."}}
     ]
   }</script>
 </head>
@@ -74,7 +74,7 @@
       <a href="/">Главная</a><span class="sep">/</span><span>Цены</span>
     </div>
     <h1><span class="gradient-text">Начни бесплатно</span> — плати, когда нужно больше</h1>
-    <p>3 n8n шаблона в каждой категории + 20 промптов — бесплатно. Подпишись на канал @ai_vmasterke — каждый день новые промпты и эксклюзивные шаблоны.</p>
+    <p>3 n8n шаблона в каждой категории — бесплатно, вся библиотека промптов — бесплатно. Подпишись на канал @ai_vmasterke — каждый день новые промпты и эксклюзивные шаблоны.</p>
   </div>
 </section>
 
@@ -93,41 +93,23 @@
           <li><span class="check">✓</span> Импорт в один клик (JSON)</li>
           <li><span class="check">✓</span> Еженедельное обновление базы</li>
           <li><span class="check">✓</span> Поддержка в Telegram</li>
-          <li><span class="cross" style="color:var(--text3)">✗</span> <span style="color:var(--text3)">Промпты дня</span></li>
         </ul>
         <a href="https://t.me/Rob46_bot" class="btn btn-p">Выбрать тариф</a>
       </div>
 
-      <!-- Prompts (Featured) -->
+      <!-- Prompts (Free) -->
       <div class="pricing-card featured">
-        <div class="p-name">💬 Промпты Дня</div>
-        <div class="p-price">50 <span style="font-size:1.5rem;color:#ffd700">⭐</span><span>/мес</span></div>
-        <div class="p-desc">Ежедневные промпты для всех нейросетей</div>
+        <div class="p-name">💬 Промпты</div>
+        <div class="p-price">Бесплатно</div>
+        <div class="p-desc">Библиотека промптов для всех нейросетей</div>
         <ul class="p-features">
-          <li><span class="check">✓</span> 246+ промптов в базе</li>
+          <li><span class="check">✓</span> 2 000+ промптов в базе</li>
           <li><span class="check">✓</span> Midjourney, ChatGPT, Claude, SD</li>
-          <li><span class="check">✓</span> 20 бесплатных на сайте</li>
-          <li><span class="check">✓</span> Ежедневное обновление</li>
-          <li><span class="check">✓</span> Уведомления в Telegram</li>
-          <li><span class="cross" style="color:var(--text3)">✗</span> <span style="color:var(--text3)">N8N шаблоны</span></li>
+          <li><span class="check">✓</span> Поиск, категории и теги</li>
+          <li><span class="check">✓</span> Регулярное пополнение</li>
+          <li><span class="check">✓</span> Без подписки и оплаты</li>
         </ul>
-        <a href="https://t.me/Rob46_bot" class="btn btn-p">Выбрать тариф</a>
-      </div>
-
-      <!-- Combo -->
-      <div class="pricing-card">
-        <div class="p-name">🔥 Комбо</div>
-        <div class="p-price">150 <span style="font-size:1.5rem;color:#ffd700">⭐</span><span>/мес</span></div>
-        <div class="p-desc">Всё вместе: n8n + промпты + бонусы</div>
-        <ul class="p-features">
-          <li><span class="check">✓</span> Все категории n8n шаблонов</li>
-          <li><span class="check">✓</span> Все промпты (246+)</li>
-          <li><span class="check">✓</span> Эксклюзивные комбо-промпты</li>
-          <li><span class="check">✓</span> Приоритетная поддержка</li>
-          <li><span class="check">✓</span> Ранний доступ к новым шаблонам</li>
-          <li><span class="check">✓</span> Экономия 33%</li>
-        </ul>
-        <a href="https://t.me/Rob46_bot" class="btn btn-p">Выбрать тариф</a>
+        <a href="https://prompts.v3ko.ru" class="btn btn-p">Открыть библиотеку</a>
       </div>
     </div>
 
@@ -154,8 +136,8 @@
         </div>
         <div class="prod-card reveal">
           <div class="icon-svg"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#c882ff" stroke-width="2" fill="none"/><path d="M20 14v8l6 3" stroke="#c882ff" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <h3>20 бесплатных промптов</h3>
-          <p>На странице промптов — 20 готовых примеров. Midjourney, ChatGPT, Claude, SD.</p>
+          <h3>2 000+ бесплатных промптов</h3>
+          <p>Вся библиотека промптов с поиском и категориями. Midjourney, ChatGPT, Claude, SD.</p>
           <a href="/prompts/" class="btn btn-s btn-sm">Смотреть →</a>
         </div>
       </div>
@@ -188,8 +170,8 @@
         <div class="fq-a"><p>Да. 3 бесплатных шаблона в каждой категории n8n. Все промпты бесплатны на prompts.v3ko.ru. Voice Assistant — полностью бесплатный без ограничений.</p></div>
       </details>
       <details class="fq-i">
-        <summary><span class="fq-q">Можно ли перейти с тарифа на другой?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="fq-a"><p>Да. Если у тебя n8n и ты хочешь комбо — просто оплати комбо в следующий раз. Остаток старого тарифа не сгорает.</p></div>
+        <summary><span class="fq-q">Что входит в подписку n8n?</span><span class="fq-c"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+        <div class="fq-a"><p>Полный доступ ко всем 12 категориям каталога n8n шаблонов на 30 дней: поиск, импорт JSON в один клик и еженедельные обновления базы.</p></div>
       </details>
     </div>
 
