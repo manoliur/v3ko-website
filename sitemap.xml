@@ -6,17 +6,22 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://v3ko.ru/n8n.html</loc>
+    <loc>https://v3ko.ru/n8n/</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://v3ko.ru/prompts.html</loc>
+    <loc>https://v3ko.ru/prompts/</loc>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://v3ko.ru/pricing.html</loc>
+    <loc>https://v3ko.ru/zavod/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://v3ko.ru/pricing/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -32,6 +37,11 @@
   </url>
   <url>
     <loc>https://v3ko.ru/blog/prompty-dlya-neyrosetey.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://v3ko.ru/blog/avtomaticheskoe-vedenie-socsetej-s-ai-kontent-zavod.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
