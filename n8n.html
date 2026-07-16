@@ -314,6 +314,11 @@ function searchCatalog(q, filterCat) {
   return results.slice(0, 50);
 }
 
+function getTemplateId(title) {
+  // Simple: use first 40 chars of title as key
+  return title.toLowerCase().replace(/[^a-z0-9]/g, '_').slice(0, 40);
+}
+
 function renderResults(results) {
   const grid = document.getElementById('n8nSearchResults');
   const info = document.getElementById('n8nResultInfo');
@@ -327,7 +332,8 @@ function renderResults(results) {
   info.textContent = 'Показано ' + results.length + ' из ' + n8nData.length;
   grid.innerHTML = results.map(w => {
     const catNames = w.c.map(c => window.n8nCats[c] || c).join(', ');
-    return '<div class="ex-card"><div class="use">' + catNames + '</div><h4>' + w.t + '</h4></div>';
+    const url = `/public/templates/${w.i}.json`;
+    return '<div class="ex-card"><div class="use">' + catNames + '</div><h4>' + w.t + '</h4><a href="' + url + '" class="btn btn-s btn-sm" style="margin-top:.8rem" download>Скачать JSON</a> <a href="https://t.me/Rob46_bot" class="btn btn-s btn-sm" style="margin-top:.8rem">Через бота</a></div>';
   }).join('');
 }
 
