@@ -144,6 +144,14 @@
       <div class="cat-chip" data-cats="docs"><span> Документы и PDF</span><span class="count">7 828</span></div>
     </div>
 
+    <!-- Search Results -->
+    <div class="reveal" id="searchSection" style="display:none;margin-top:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+        <span id="n8nResultInfo" style="color:var(--text2);font-size:.9rem"></span>
+      </div>
+      <div class="ex-grid" id="n8nSearchResults"></div>
+    </div>
+
     <!-- Examples -->
     <div class="reveal" style="margin-top:3rem">
       <div class="sh">
@@ -279,7 +287,76 @@
 </footer>
 
 <script>
-// Mobile nav
+let n8nData = [];
+
+function loadCatalog() {
+  fetch('/public/n8n-catalog.json')
+    .then(r => r.json())
+    .then(d => {
+      n8nData = d.wfs;
+      window.n8nCats = d.cats;
+      document.getElementById('n8nSearch').disabled = false;
+      document.getElementById('n8nSearch').placeholder = 'Найти шаблон... (' + n8nData.length + ' шт)';
+      // Update category counts
+      document.querySelectorAll('#catGrid .cat-chip').forEach(chip => {
+        const ck = chip.dataset.cats;
+        let cnt = n8nData.filter(w => w.c.includes(ck)).length;
+        chip.querySelector('.count').textContent = cnt.toLocaleString('ru');
+      });
+    });
+}
+
+function searchCatalog(q, filterCat) {
+  q = q.toLowerCase().trim();
+  let results = n8nData;
+  if (filterCat !== 'all') results = results.filter(w => w.c.includes(filterCat));
+  if (q) results = results.filter(w => w.t.toLowerCase().includes(q));
+  return results.slice(0, 50);
+}
+
+function renderResults(results) {
+  const grid = document.getElementById('n8nSearchResults');
+  const info = document.getElementById('n8nResultInfo');
+  const section = document.getElementById('searchSection');
+  section.style.display = 'block';
+  if (!results.length) {
+    grid.innerHTML = '<div class="ex-card" style="text-align:center;grid-column:1/-1;padding:3rem;color:var(--text2)">Ничего не найдено. Попробуйте другой запрос.</div>';
+    info.textContent = '0 результатов';
+    return;
+  }
+  info.textContent = 'Показано ' + results.length + ' из ' + n8nData.length;
+  grid.innerHTML = results.map(w => {
+    const catNames = w.c.map(c => window.n8nCats[c] || c).join(', ');
+    return '<div class="ex-card"><div class="use">' + catNames + '</div><h4>' + w.t + '</h4></div>';
+  }).join('');
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  loadCatalog();
+
+  const searchInput = document.getElementById('n8nSearch');
+  const catTabs = document.querySelectorAll('#catTabs button');
+  let currentCat = 'all';
+
+  function doSearch() {
+    const results = searchCatalog(searchInput.value, currentCat);
+    renderResults(results);
+  }
+
+  searchInput.addEventListener('input', doSearch);
+
+  catTabs.forEach(btn => {
+    btn.addEventListener('click', function() {
+      catTabs.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentCat = this.dataset.cat;
+      doSearch();
+    });
+  });
+});
+
+// Mobile nav etc.
 document.getElementById('nt').addEventListener('click', function(){
   document.querySelector('.nl').classList.toggle('active');
   this.classList.toggle('active');
@@ -297,26 +374,6 @@ document.querySelectorAll('.reveal').forEach(e => rv.observe(e));
 
 // Navbar scroll
 window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 50); });
-
-// N8N category filter
-document.querySelectorAll('#catTabs button').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('#catTabs button').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    let cat = this.dataset.cat;
-    document.querySelectorAll('#catGrid .cat-chip').forEach(chip => {
-      chip.style.display = cat === 'all' || chip.dataset.cats.includes(cat) ? 'flex' : 'none';
-    });
-  });
-});
-
-// N8N search
-document.getElementById('n8nSearch').addEventListener('input', function() {
-  let q = this.value.toLowerCase();
-  document.querySelectorAll('#catGrid .cat-chip').forEach(chip => {
-    chip.style.display = q === '' || chip.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
-  });
-});
 </script>
 </body>
 </html>
